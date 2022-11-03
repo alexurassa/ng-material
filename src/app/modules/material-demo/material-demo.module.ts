@@ -5,6 +5,7 @@ import { AngularMaterialModulesModule } from '@ng-material-modules/angular-mater
 import { TypographyComponent } from './components/typography/typography.component';
 import { MaterialDemoRoutingModule } from './material-demo-routing.module';
 import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.component';
+import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-button-toggle.component';
 
 
 
@@ -13,7 +14,8 @@ import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.compon
   declarations: [
     MaterialDemoComponent,
     TypographyComponent,
-    MatButtonsComponent
+    MatButtonsComponent,
+    MatButtonToggleComponent
   ],
   imports: [
     CommonModule,

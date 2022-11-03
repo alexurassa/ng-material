@@ -1,0 +1,25 @@
+<mat-button-toggle #toggle checked>Toggle</mat-button-toggle>
+<p class="mat-body-2">{{ toggle.checked }}</p>
+
+
+<mat-button-toggle disabled disableRipple>disabled and no ripple</mat-button-toggle>
+
+<mat-button-toggle-group #toggleButtonGroup="matButtonToggleGroup">
+    <ng-template ngFor let-fruit [ngForOf]="fruits" let-last="last"; let-id="index">
+        <mat-button-toggle [value]="fruit">{{ fruit }} {{ id }}</mat-button-toggle>
+    </ng-template>
+</mat-button-toggle-group>
+
+<p>{{ toggleButtonGroup.value }}</p>
+
+<h3 class="mat-title">With multiple Toggle options</h3>
+<mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <ng-template ngFor let-fruit [ngForOf]="fruits" let-last="last"; let-id="index">
+        <mat-button-toggle [value]="fruit">{{ fruit }}</mat-button-toggle>
+    </ng-template>
+</mat-button-toggle-group>
+
+<p>{{ toggleGroup.value }}</p>
+
+
+
