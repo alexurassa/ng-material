@@ -10,7 +10,6 @@ import { MatModulesModule } from '@mat-modules/mat-modules.module';
   imports: [
     CommonModule,
     MaterialRoutingModule,
-    MatModulesModule
   ]
 })
 export class MaterialModule { }
