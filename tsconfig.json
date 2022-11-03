@@ -3,9 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": { 
-      "@material/*": ["app/modules/material/*"],
-      "@mat-modules/*": ["app/shared/modules/mat-modules/*"],
+    "paths": {
+      "@material-demo/*": ["app/modules/material-demo/*"],
+      "@ng-material-modules/*": ["app/shared/modules/angular-material-modules/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
