@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaterialDemoModule } from '@material-demo/material-demo.module';
 
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'material', pathMatch: 'full' },
   {
-    path: '',
+    path: 'material',
     loadChildren: () => import('@material-demo/material-demo.module').then(mod => mod.MaterialDemoModule)
-  }
+  },
+  { path: '**', redirectTo: 'material', pathMatch: 'full' }
 ];
 
 @NgModule({

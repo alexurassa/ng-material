@@ -4,14 +4,17 @@ import { MatButtonModule } from '@angular/material/button'
 
 
 
+const materialModules: Array<any> = [
+  MatButtonModule
+]
+
+
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule,
-    MatButtonModule
+    materialModules
   ],
   exports: [
-    MatButtonModule
+    materialModules
   ]
 })
 export class AngularMaterialModulesModule { }
