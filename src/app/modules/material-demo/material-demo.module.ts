@@ -4,6 +4,7 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
 import { AngularMaterialModulesModule } from '@ng-material-modules/angular-material-modules.module';
 import { TypographyComponent } from './components/typography/typography.component';
 import { MaterialDemoRoutingModule } from './material-demo-routing.module';
+import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.component';
 
 
 
@@ -11,7 +12,8 @@ import { MaterialDemoRoutingModule } from './material-demo-routing.module';
 @NgModule({
   declarations: [
     MaterialDemoComponent,
-    TypographyComponent
+    TypographyComponent,
+    MatButtonsComponent
   ],
   imports: [
     CommonModule,
