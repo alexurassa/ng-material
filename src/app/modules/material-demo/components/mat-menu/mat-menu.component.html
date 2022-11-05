@@ -1,0 +1,57 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>        
+        <button mat-stroked-button color="primary" [matMenuTriggerFor]="defaultMenu">Trigger default menu</button>
+        <button 
+        mat-flat-button color="accent"
+        [matMenuTriggerFor]="lazyMenu"
+        [matMenuTriggerData]="friend1"
+        >
+        Trigger lazy Friend1
+    </button>
+    <button 
+    mat-stroked-button color="warn"
+    [matMenuTriggerFor]="lazyMenu"
+    [matMenuTriggerData]="friend2"
+    >
+    Trigger lazy Friend1
+</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<mat-menu #defaultMenu="matMenu" xPosition="after" yPosition="above">
+    <span mat-menu-item>Fruits</span>
+    <span mat-menu-item [matMenuTriggerFor]="subMenu">Animals</span>
+</mat-menu>
+
+
+<mat-menu #subMenu="matMenu">
+    <span mat-menu-item>Cow</span>
+    <span mat-menu-item>Goat</span>
+    <span mat-menu-item>Dog</span>
+    <span mat-menu-item>Cat</span>
+</mat-menu>
+
+
+<mat-menu #lazyMenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-hobby="hobby">
+        <span mat-menu-item>{{ name }}</span>
+        <span mat-menu-item>His/Her hobby is {{ hobby }}</span>
+    </ng-template>
+</mat-menu>
+
+
+
+<style>
+    mat-sidenav-content {
+        padding: 2rem;
+    }
+
+    mat-sidenav-container {
+        margin-top: 8rem;
+    }
+
+    button {
+        margin: 1rem;
+    }
+</style>

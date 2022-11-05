@@ -11,6 +11,7 @@ import { MatBadgesComponent } from './components/mat-badges/mat-badges.component
 import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/mat-progress-spinner.component';
 import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
 import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.component';
+import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 
 
 
@@ -24,7 +25,8 @@ import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.compon
     MatBadgesComponent,
     MatProgressSpinnerComponent,
     MatToolbarComponent,
-    MatSidenavComponent
+    MatSidenavComponent,
+    MatMenuComponent
   ],
   imports: [
     CommonModule,
