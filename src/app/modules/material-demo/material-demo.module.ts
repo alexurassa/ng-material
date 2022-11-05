@@ -8,6 +8,7 @@ import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.compon
 import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-button-toggle.component';
 import { MatBadgesComponent } from './components/mat-badges/mat-badges.component';
 import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/mat-progress-spinner.component';
+import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
 
 
 
@@ -19,7 +20,8 @@ import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/m
     MatButtonsComponent,
     MatButtonToggleComponent,
     MatBadgesComponent,
-    MatProgressSpinnerComponent
+    MatProgressSpinnerComponent,
+    MatToolbarComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.compon
 import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-button-toggle.component';
 import { MatBadgesComponent } from './components/mat-badges/mat-badges.component';
 import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/mat-progress-spinner.component';
+import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
        { path: 'button-toggle', component: MatButtonToggleComponent, title: 'Button Toggle' },
        { path: 'badges', component: MatBadgesComponent, title: 'Badges Demostration' },
        { path: 'progress-spinner', component: MatProgressSpinnerComponent, title: 'Progress Spinner' },
+       { path: 'toolbar', component: MatToolbarComponent, title: 'Toolbar' },
      ]
   },
 ]
