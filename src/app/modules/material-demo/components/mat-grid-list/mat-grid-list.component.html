@@ -1,0 +1,20 @@
+<mat-grid-list [cols]="2" rowHeight="2:1" [gutterSize]="gutterSize">
+  <mat-grid-tile *ngFor="let tileNumber of tiles">
+    <mat-grid-tile-header>
+      <h3 class="mat-title">List Tile Header {{ tileNumber }}</h3>
+    </mat-grid-tile-header>
+    <mat-grid-tile-footer>
+      <p class="mat-body-1">List Tile Footer {{ tileNumber }}</p>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<style>
+  mat-grid-tile {
+    background-color: lightseagreen;
+  }
+
+  mat-grid-list {
+    height: 200px;
+  }
+</style>

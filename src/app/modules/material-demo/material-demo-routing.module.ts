@@ -11,6 +11,7 @@ import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.compon
 import { MatSidenavComponent } from '@material-demo/components/mat-sidenav/mat-sidenav.component';
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
+import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
        { path: 'sidenav', component: MatSidenavComponent, title: 'Sidenav' },
        { path: 'menu', component: MatMenuComponent, title: 'Menu' },
        { path: 'lists', component: MatListComponent, title: 'Lists' },
+       { path: 'grid-list', component: MatGridListComponent, title: 'Grid List' },
      ]
   },
 ]

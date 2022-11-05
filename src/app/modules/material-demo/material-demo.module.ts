@@ -13,6 +13,7 @@ import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.compon
 import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.component';
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
+import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.component';
 
 
 
@@ -28,7 +29,8 @@ import { MatListComponent } from './components/mat-list/mat-list.component';
     MatToolbarComponent,
     MatSidenavComponent,
     MatMenuComponent,
-    MatListComponent
+    MatListComponent,
+    MatGridListComponent
   ],
   imports: [
     CommonModule,
