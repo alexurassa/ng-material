@@ -13,6 +13,7 @@ import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
 import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.component';
 import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.component';
+import { MatCardComponent } from './components/mat-card/mat-card.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
        { path: 'lists', component: MatListComponent, title: 'Lists' },
        { path: 'grid-list', component: MatGridListComponent, title: 'Grid List' },
        { path: 'expansions', component: MatExpansionComponent, title: 'Expansions' },
+       { path: 'cards', component: MatCardComponent, title: 'mat-cards' },
      ]
   },
 ]
