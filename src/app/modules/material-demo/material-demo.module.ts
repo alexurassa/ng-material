@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { AngularMaterialModulesModule } from '@ng-material-modules/angular-material-modules.module';
 import { TypographyComponent } from './components/typography/typography.component';
@@ -9,6 +10,7 @@ import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-but
 import { MatBadgesComponent } from './components/mat-badges/mat-badges.component';
 import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/mat-progress-spinner.component';
 import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
+import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.component';
 
 
 
@@ -21,12 +23,14 @@ import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.compon
     MatButtonToggleComponent,
     MatBadgesComponent,
     MatProgressSpinnerComponent,
-    MatToolbarComponent
+    MatToolbarComponent,
+    MatSidenavComponent
   ],
   imports: [
     CommonModule,
     AngularMaterialModulesModule,
-    MaterialDemoRoutingModule
+    MaterialDemoRoutingModule,
+    FormsModule 
   ],
   exports: [
     MaterialDemoComponent

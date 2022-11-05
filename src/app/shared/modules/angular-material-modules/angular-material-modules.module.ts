@@ -4,6 +4,8 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle"
 import { MatBadgeModule } from "@angular/material/badge"
 import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner'
 import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatMenuModule } from '@angular/material/menu'
 
 
 
@@ -13,7 +15,9 @@ const materialModules: Array<any> = [
   MatButtonToggleModule,
   MatBadgeModule,
   MatProgressSpinnerModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatMenuModule
 ]
 
 

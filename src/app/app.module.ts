@@ -9,7 +9,7 @@ import { MaterialDemoModule } from './modules/material-demo/material-demo.module
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

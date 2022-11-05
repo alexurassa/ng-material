@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [(opened)]="opened" mode="side" (closed)="log('closed')" (opened)="log('opened')">Sidenav</mat-sidenav>
+    <mat-sidenav-content>
+        <span>The main sidenav</span>
+        <button mat-raised-button (click)="opened = !opened">Toggle opened</button>
+        <button mat-raised-button color="primary" (click)="sidenav.open()">open sidenav</button>
+        <button mat-raised-button color="warn" (click)="sidenav.close()">close sidenav</button>
+        <button mat-raised-button color="accent" (click)="sidenav.toggle()">Toggle sidenav</button>
+
+        <ul>
+            <ng-template [ngIf]="sidenavModes" ngFor let-mode [ngForOf]="sidenavModes">
+                <li>
+                    <span class="mat-subheadline-1">{{ mode.name | uppercase }}</span>
+                    <p class="mat-body-1">{{ mode.explanation }}</p>
+                </li>
+            </ng-template>
+        </ul>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+<style>
+    mat-sidenav-container {
+        height: 100%;
+    }
+
+    mat-sidenav {
+        width: 230px;
+    }
+
+    button {
+        margin: 1rem;
+    }
+</style>
