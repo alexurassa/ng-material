@@ -1,0 +1,72 @@
+<div class="display-2">MatBadges Demostration</div>
+
+<div>
+  <span class="wrapper">
+    <span matBadge="4">Messages</span>
+  </span>
+</div>
+
+<div>
+  <h3 class="headline">positioning</h3>
+  <span class="wrapper">
+    <span matBadge="4" matBadgePosition="below after">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgePosition="below before">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgePosition="above before">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgePosition="above after">Messages</span>
+  </span>
+</div>
+
+<div>
+  <h3 class="headline">Coloring</h3>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeColor="accent">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeColor="primary">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeColor="warn">Messages</span>
+  </span>
+</div>
+
+<div>
+  <h3 class="headline">Sizing</h3>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeSize="large">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeSize="small">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeSize="medium">Messages</span>
+  </span>
+</div>
+
+<div>
+  <h3 class="headline">Overlap, Hidden State and binding</h3>
+  <span class="wrapper">
+    <span matBadge="4" matBadgeOverlap="false">Messages(No overlap)</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="4" [matBadgeHidden]="messages === 0">Messages</span>
+  </span>
+  <span class="wrapper">
+    <span matBadge="{{ messages }}">Messages</span>
+  </span>
+  <span [matBadge]="messages">Messages</span>
+</div>
+
+<style>
+  div {
+    margin: 3rem;
+  }
+  .wrapper {
+    margin: 2rem;
+  }
+</style>

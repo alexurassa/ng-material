@@ -6,6 +6,8 @@ import { TypographyComponent } from './components/typography/typography.componen
 import { MaterialDemoRoutingModule } from './material-demo-routing.module';
 import { MatButtonsComponent } from './components/mat-buttons/mat-buttons.component';
 import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-button-toggle.component';
+import { MatBadgesComponent } from './components/mat-badges/mat-badges.component';
+import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/mat-progress-spinner.component';
 
 
 
@@ -15,7 +17,9 @@ import { MatButtonToggleComponent } from './components/mat-button-toggle/mat-but
     MaterialDemoComponent,
     TypographyComponent,
     MatButtonsComponent,
-    MatButtonToggleComponent
+    MatButtonToggleComponent,
+    MatBadgesComponent,
+    MatProgressSpinnerComponent
   ],
   imports: [
     CommonModule,
