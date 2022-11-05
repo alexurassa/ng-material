@@ -12,6 +12,7 @@ import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/m
 import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
 import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.component';
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
+import { MatListComponent } from './components/mat-list/mat-list.component';
 
 
 
@@ -26,7 +27,8 @@ import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
     MatProgressSpinnerComponent,
     MatToolbarComponent,
     MatSidenavComponent,
-    MatMenuComponent
+    MatMenuComponent,
+    MatListComponent
   ],
   imports: [
     CommonModule,

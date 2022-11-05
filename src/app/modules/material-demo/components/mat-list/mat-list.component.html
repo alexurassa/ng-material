@@ -1,0 +1,39 @@
+<mat-list>
+    <mat-list-item>Item 1</mat-list-item>
+    <mat-list-item>Item 2</mat-list-item>
+    <mat-list-item>Item 3</mat-list-item>
+</mat-list>
+
+
+<mat-nav-list dense>
+    <mat-list-item>Product 1</mat-list-item>
+    <mat-list-item>Product 2</mat-list-item>
+    <mat-list-item>Product 3</mat-list-item>
+</mat-nav-list>
+
+
+<mat-nav-list class="fixed-width">
+    <a mat-list-item routerLink="/material/lists">Focus 1</a>
+    <a mat-list-item routerLink="/material/lists">Focus 2</a>
+</mat-nav-list>
+
+<mat-list>
+    <mat-list-item>
+        <mat-icon matListIcon>home</mat-icon>
+        <span matLine>Line 1</span>
+        <span matLine>Line 2</span>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <span matLine>Line 1</span>
+        <span matLine>Line 2</span>
+    </mat-list-item>
+</mat-list>
+
+
+
+<style>
+    .fixed-width {
+        width: 300px;
+    }
+</style>

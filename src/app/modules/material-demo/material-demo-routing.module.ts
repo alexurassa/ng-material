@@ -10,6 +10,7 @@ import { MatProgressSpinnerComponent } from './components/mat-progress-spinner/m
 import { MatToolbarComponent } from './components/mat-toolbar/mat-toolbar.component';
 import { MatSidenavComponent } from '@material-demo/components/mat-sidenav/mat-sidenav.component';
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
+import { MatListComponent } from './components/mat-list/mat-list.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
        { path: 'toolbar', component: MatToolbarComponent, title: 'Toolbar' },
        { path: 'sidenav', component: MatSidenavComponent, title: 'Sidenav' },
        { path: 'menu', component: MatMenuComponent, title: 'Menu' },
+       { path: 'lists', component: MatListComponent, title: 'Lists' },
      ]
   },
 ]

@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatIconModule } from '@angular/material/icon'
+import { MatListModule } from '@angular/material/list'
 
 
 
@@ -19,7 +20,8 @@ const materialModules: Array<any> = [
   MatToolbarModule,
   MatSidenavModule,
   MatMenuModule,
-  MatIconModule
+  MatIconModule,
+  MatListModule
 ]
 
 
