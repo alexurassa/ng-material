@@ -14,6 +14,7 @@ import { MatSidenavComponent } from './components/mat-sidenav/mat-sidenav.compon
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
 import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.component';
+import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.component';
 
 
 
@@ -30,7 +31,8 @@ import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.c
     MatSidenavComponent,
     MatMenuComponent,
     MatListComponent,
-    MatGridListComponent
+    MatGridListComponent,
+    MatExpansionComponent
   ],
   imports: [
     CommonModule,

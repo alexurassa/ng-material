@@ -12,6 +12,7 @@ import { MatSidenavComponent } from '@material-demo/components/mat-sidenav/mat-s
 import { MatMenuComponent } from './components/mat-menu/mat-menu.component';
 import { MatListComponent } from './components/mat-list/mat-list.component';
 import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.component';
+import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
        { path: 'menu', component: MatMenuComponent, title: 'Menu' },
        { path: 'lists', component: MatListComponent, title: 'Lists' },
        { path: 'grid-list', component: MatGridListComponent, title: 'Grid List' },
+       { path: 'expansions', component: MatExpansionComponent, title: 'Expansions' },
      ]
   },
 ]

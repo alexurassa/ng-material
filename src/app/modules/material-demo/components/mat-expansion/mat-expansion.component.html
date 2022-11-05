@@ -1,0 +1,55 @@
+<div class="container">
+    <mat-accordion multi="false" [hideToggle]="false">
+        <mat-expansion-panel (closed)="log('panel1 closed')" (opened)="log('panel 1 is opened')">
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Material</mat-panel-title>
+                <mat-panel-description>Course Duration 3:00 hrs</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <p class="mat-headline-1">
+                    Expansion panel content
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Laboriosam, quas quisquam harum ex natus eaque voluptatibus 
+                    ea eius sed iusto, explicabo cupiditate veritatis sunt 
+                    assumenda consequatur nisi maxime aperiam porro!
+                </p>
+            </div>
+            <mat-action-row>
+                <button mat-stroked-button color="primary">Later</button>
+                <button mat-stroked-button color="accent">Enroll Now</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    
+        <mat-expansion-panel #panel2="matExpansionPanel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Hero Tutorial</mat-panel-title>
+                <mat-panel-description>Course Duration 2:30 hrs</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <p class="mat-body-2">
+                    Expansion panel content
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Laboriosam, quas quisquam harum ex natus eaque voluptatibus 
+                    ea eius sed iusto, explicabo cupiditate veritatis sunt 
+                    assumenda consequatur nisi maxime aperiam porro!
+                </p>
+            </div>
+            <mat-action-row>
+                <button mat-stroked-button color="primary">Later</button>
+                <button mat-raised-button color="accent">Enroll Now</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <button mat-stroked-button color="warn" (click)="panel2.toggle()">Toggle panel2</button>
+</div>
+
+
+
+<style>
+    .container {
+        width:500px;
+        display: block;
+        margin: 3rem auto;
+    }
+</style>
