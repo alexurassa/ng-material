@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { AngularMaterialModulesModule } from '@ng-material-modules/angular-material-modules.module';
 import { TypographyComponent } from './components/typography/typography.component';
@@ -27,6 +28,7 @@ import { CustomSnackBarComponent, MatSnackbarComponent } from './components/mat-
 import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
 import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat-dialog-template.component';
 import { MatDataTableComponent } from './components/mat-data-table/mat-data-table.component';
+import { VirtualScrollingComponent } from './components/virtual-scrolling/virtual-scrolling.component';
 
 
 
@@ -57,14 +59,16 @@ import { MatDataTableComponent } from './components/mat-data-table/mat-data-tabl
     MatTooltipComponent,
     MatSnackbarComponent,
     CustomSnackBarComponent,
-    MatDataTableComponent
+    MatDataTableComponent,
+    VirtualScrollingComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [
     CommonModule,
     AngularMaterialModulesModule,
     MaterialDemoRoutingModule,
-    FormsModule 
+    FormsModule,
+    ScrollingModule
   ],
   exports: [
     MaterialDemoComponent

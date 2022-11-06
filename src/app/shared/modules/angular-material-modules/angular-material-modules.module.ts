@@ -64,7 +64,7 @@ const materialModules: Array<any> = [
 
 @NgModule({
   imports: [
-    materialModules
+    materialModules,
   ],
   exports: [
     materialModules

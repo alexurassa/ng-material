@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <cdk-virtual-scroll-viewport itemSize="150" class="cdk-viewport mat-elevation-z3">
+      <span class="mat-body-2 number" *cdkVirtualFor="let number of numbers">
+        {{ number }}
+        <mat-divider></mat-divider>
+      </span>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
+
+<style>
+  .container {
+    width: 300px;
+    display: block;
+    margin: 4rem auto;
+  }
+
+  .number {
+    display: block;
+    margin: 0.25rem auto;
+    height: 140px;
+  }
+
+  .cdk-viewport {
+    height: 300px;
+  }
+</style>
