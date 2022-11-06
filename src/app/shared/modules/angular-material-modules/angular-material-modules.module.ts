@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatStepperModule } from '@angular/material/stepper'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
 
 
 const materialModules: Array<any> = [
@@ -33,7 +34,8 @@ const materialModules: Array<any> = [
   MatCardModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatSelectModule
 ]
 
 

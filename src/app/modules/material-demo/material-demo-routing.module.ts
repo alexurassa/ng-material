@@ -16,6 +16,7 @@ import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.
 import { MatCardComponent } from './components/mat-card/mat-card.component';
 import { MatStepperComponent } from './components/mat-stepper/mat-stepper.component';
 import { MatInputComponent } from './components/mat-input/mat-input.component';
+import { MatSelectComponent } from './components/mat-select/mat-select.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
        { path: 'cards', component: MatCardComponent, title: 'mat-cards' },
        { path: 'stepper', component: MatStepperComponent, title: 'mat stepper' },
        { path: 'input', component: MatInputComponent, title: 'Form Inputs' },
+       { path: 'select', component: MatSelectComponent, title: 'Form Select' },
      ]
   },
 ]

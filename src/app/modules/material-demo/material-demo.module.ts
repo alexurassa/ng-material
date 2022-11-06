@@ -18,6 +18,7 @@ import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.
 import { MatCardComponent } from './components/mat-card/mat-card.component';
 import { MatStepperComponent } from './components/mat-stepper/mat-stepper.component';
 import { MatInputComponent } from './components/mat-input/mat-input.component';
+import { MatSelectComponent } from './components/mat-select/mat-select.component';
 
 
 
@@ -38,7 +39,8 @@ import { MatInputComponent } from './components/mat-input/mat-input.component';
     MatExpansionComponent,
     MatCardComponent,
     MatStepperComponent,
-    MatInputComponent
+    MatInputComponent,
+    MatSelectComponent
   ],
   imports: [
     CommonModule,
