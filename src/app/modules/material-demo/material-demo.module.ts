@@ -26,6 +26,7 @@ import { MatTooltipComponent } from './components/mat-tooltip/mat-tooltip.compon
 import { CustomSnackBarComponent, MatSnackbarComponent } from './components/mat-snackbar/mat-snackbar.component';
 import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
 import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat-dialog-template.component';
+import { MatDataTableComponent } from './components/mat-data-table/mat-data-table.component';
 
 
 
@@ -55,7 +56,8 @@ import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat
     MatDatepickerComponent,
     MatTooltipComponent,
     MatSnackbarComponent,
-    CustomSnackBarComponent
+    CustomSnackBarComponent,
+    MatDataTableComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [

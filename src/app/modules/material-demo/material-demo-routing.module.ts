@@ -23,6 +23,7 @@ import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepick
 import { MatTooltipComponent } from './components/mat-tooltip/mat-tooltip.component';
 import { MatSnackbarComponent } from './components/mat-snackbar/mat-snackbar.component';
 import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
+import { MatDataTableComponent } from './components/mat-data-table/mat-data-table.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
        { path: 'tooltip', component: MatTooltipComponent, title: 'Tooltip' },
        { path: 'snackbar', component: MatSnackbarComponent, title: 'SnackBar' },
        { path: 'dialog', component: MatDialogComponent, title: 'Dialog Demo' },
+       { path: 'data-table', component: MatDataTableComponent, title: 'Data Table' },
      ]
   },
 ]

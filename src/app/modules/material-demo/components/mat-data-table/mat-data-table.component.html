@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-form-field color="primary">
+        <mat-label>Filter</mat-label>
+        <input type="text" matInput (keyup)="applyFilter($event)" placeholder="Filter users..." />
+    </mat-form-field>
+
+    <div class="mat-elevation-z4">
+        <mat-table [dataSource]="usersDataSource" matSort>
+    
+            <ng-container matColumnDef="fullName">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>Full Name</mat-header-cell>
+                <mat-cell *matCellDef="let user">{{ user.fullName }}</mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="age">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+                <mat-cell *matCellDef="let user">{{ user.age }}</mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="country">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+                <mat-cell *matCellDef="let user">{{ user.country }}</mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="usersTableColumns"></mat-header-row>
+            <mat-row (click)="logToConsole(row)" *matRowDef="let row; columns: usersTableColumns"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[2, 3]" showFirstLastbuttons></mat-paginator>
+    </div>
+</div>
+
+
+<style>
+    .container {
+        width: 60%;
+        display: block;
+        margin: 5rem auto;
+    }
+</style>
