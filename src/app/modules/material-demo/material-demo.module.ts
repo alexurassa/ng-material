@@ -19,6 +19,7 @@ import { MatCardComponent } from './components/mat-card/mat-card.component';
 import { MatStepperComponent } from './components/mat-stepper/mat-stepper.component';
 import { MatInputComponent } from './components/mat-input/mat-input.component';
 import { MatSelectComponent } from './components/mat-select/mat-select.component';
+import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-autocomplete.component';
 
 
 
@@ -40,7 +41,8 @@ import { MatSelectComponent } from './components/mat-select/mat-select.component
     MatCardComponent,
     MatStepperComponent,
     MatInputComponent,
-    MatSelectComponent
+    MatSelectComponent,
+    MatAutocompleteComponent
   ],
   imports: [
     CommonModule,
