@@ -1,0 +1,29 @@
+<form action="#">
+    <p class="mat-title">Default autocomplete feature</p>
+    <mat-form-field>
+        <mat-label>Autocomplete</mat-label>
+        <input type="text" matInput [matAutocomplete]="fruitsAutocomplete" />
+
+        <mat-autocomplete #fruitsAutocomplete="matAutocomplete">
+            <ng-template ngFor let-fruit [ngForOf]="fruits">
+                <mat-option [value]="fruit">{{ fruit }}</mat-option>
+            </ng-template>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+
+
+<form>
+    <p class="mat-headline">Field using autocomplete of of Customer Objects</p>
+    <mat-form-field floatLabel="always" color="accent" appearance="standard">
+        <mat-label>Customer</mat-label>
+
+        <input type="text" matInput [matAutocomplete]="customersAuto" placeholder="Customer Name" />
+
+        <mat-autocomplete #customersAuto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let customer of filteredCustomers | async" [value]="customer">
+                {{ customer.name }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
