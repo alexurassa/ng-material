@@ -18,6 +18,10 @@ import { MatStepperComponent } from './components/mat-stepper/mat-stepper.compon
 import { MatInputComponent } from './components/mat-input/mat-input.component';
 import { MatSelectComponent } from './components/mat-select/mat-select.component';
 import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-autocomplete.component';
+import { MatCheckboxRadioComponent } from './components/mat-checkbox-radio/mat-checkbox-radio.component';
+import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepicker.component';
+import { MatTooltipComponent } from './components/mat-tooltip/mat-tooltip.component';
+import { MatSnackbarComponent } from './components/mat-snackbar/mat-snackbar.component';
 
 
 const routes: Routes = [
@@ -41,6 +45,10 @@ const routes: Routes = [
        { path: 'input', component: MatInputComponent, title: 'Form Inputs' },
        { path: 'select', component: MatSelectComponent, title: 'Form Select' },
        { path: 'autocomplete', component: MatAutocompleteComponent, title: 'autocomplete' },
+       { path: 'checkbox-radio', component: MatCheckboxRadioComponent, title: 'checkbox and radio' },
+       { path: 'datepicker', component: MatDatepickerComponent, title: 'datePicker' },
+       { path: 'tooltip', component: MatTooltipComponent, title: 'Tooltip' },
+       { path: 'snackbar', component: MatSnackbarComponent, title: 'SnackBar' },
      ]
   },
 ]
