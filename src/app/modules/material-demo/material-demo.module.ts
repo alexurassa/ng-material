@@ -20,6 +20,8 @@ import { MatStepperComponent } from './components/mat-stepper/mat-stepper.compon
 import { MatInputComponent } from './components/mat-input/mat-input.component';
 import { MatSelectComponent } from './components/mat-select/mat-select.component';
 import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-autocomplete.component';
+import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
+import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat-dialog-template.component';
 
 
 
@@ -42,7 +44,9 @@ import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-auto
     MatStepperComponent,
     MatInputComponent,
     MatSelectComponent,
-    MatAutocompleteComponent
+    MatAutocompleteComponent,
+    MatDialogComponent,
+    MatDialogTemplateComponent
   ],
   imports: [
     CommonModule,
