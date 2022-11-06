@@ -22,6 +22,8 @@ import { MatSelectComponent } from './components/mat-select/mat-select.component
 import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-autocomplete.component';
 import { MatCheckboxRadioComponent } from './components/mat-checkbox-radio/mat-checkbox-radio.component';
 import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepicker.component';
+import { MatTooltipComponent } from './components/mat-tooltip/mat-tooltip.component';
+import { CustomSnackBarComponent, MatSnackbarComponent } from './components/mat-snackbar/mat-snackbar.component';
 
 
 
@@ -46,8 +48,12 @@ import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepick
     MatSelectComponent,
     MatAutocompleteComponent,
     MatCheckboxRadioComponent,
-    MatDatepickerComponent
+    MatDatepickerComponent,
+    MatTooltipComponent,
+    MatSnackbarComponent,
+    CustomSnackBarComponent
   ],
+  entryComponents: [CustomSnackBarComponent],
   imports: [
     CommonModule,
     AngularMaterialModulesModule,
