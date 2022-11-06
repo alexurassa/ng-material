@@ -1,0 +1,52 @@
+<div class="container">
+    <mat-form-field apperance="outline" floatLabel="always" [hideRequiredMarker]="false">
+        <mat-label>First Name</mat-label>
+        <input matInput required />
+        <mat-hint align="end">Max 50 characters</mat-hint>
+    </mat-form-field>
+    <p class="mat-body-2">Apperance outline, color primary(default), floatLabel - always</p>
+    
+    
+    <mat-form-field apperance="fill" floatLabel="auto" color="accent" [hideRequiredMarker]="false">
+        <mat-label>First Name</mat-label>
+        <input matInput required placeholder="Enter your first name" />
+        <mat-hint align="end">Max 50 characters</mat-hint>
+    </mat-form-field>
+    <p class="mat-body-2">Apperance fill, color accent, floatLabel - auto</p>
+    
+    <mat-form-field apperance="legacy" floatLabel="always" [hideRequiredMarker]="false">
+        <mat-label>First Name</mat-label>
+        <input matInput required placeholder="Enter your first name" />
+        <mat-hint align="end">Max 50 characters</mat-hint>
+    </mat-form-field>
+    <p class="mat-body-2">Apperance legacy, color primary, floatLabel - always</p>
+    
+    <mat-form-field apperance="standard" floatLabel="auto" color="accent" [hideRequiredMarker]="false">
+        <mat-label>First Name</mat-label>
+        <input matInput required />
+        <mat-hint align="end">Max 50 characters</mat-hint>
+    </mat-form-field>
+    <p class="mat-body-1">Apperance standard, color accent, floatLabel - auto</p>
+    
+    <mat-form-field apperance="fill" floatLabel="never" color="warn" [hideRequiredMarker]="true">
+        <mat-label>First Name</mat-label>
+        <input matInput required />
+        <mat-hint align="start">Max 50 characters</mat-hint>
+    </mat-form-field>
+    <p class="mat-body-1">Apperance fill, color warn, floatLabel - never</p>
+    
+</div>
+
+
+<style>
+
+    .container {
+        display: block;
+        margin: 4rem auto;
+        width: 500px;
+    }
+    mat-form-field {
+        display: block;
+        margin: 2rem;
+    }
+</style>

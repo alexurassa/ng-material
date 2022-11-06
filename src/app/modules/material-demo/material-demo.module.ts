@@ -17,6 +17,7 @@ import { MatGridListComponent } from './components/mat-grid-list/mat-grid-list.c
 import { MatExpansionComponent } from './components/mat-expansion/mat-expansion.component';
 import { MatCardComponent } from './components/mat-card/mat-card.component';
 import { MatStepperComponent } from './components/mat-stepper/mat-stepper.component';
+import { MatInputComponent } from './components/mat-input/mat-input.component';
 
 
 
@@ -36,7 +37,8 @@ import { MatStepperComponent } from './components/mat-stepper/mat-stepper.compon
     MatGridListComponent,
     MatExpansionComponent,
     MatCardComponent,
-    MatStepperComponent
+    MatStepperComponent,
+    MatInputComponent
   ],
   imports: [
     CommonModule,
