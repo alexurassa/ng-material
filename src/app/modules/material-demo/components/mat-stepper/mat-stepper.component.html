@@ -1,0 +1,49 @@
+<mat-horizontal-stepper linear>
+    <mat-step [completed]="true" label="Creating Account">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Complete step one to proceed</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </mat-step>
+    <mat-step [optional]="true" [completed]="false" label="Subscription">
+        <p class="mat-body-1">
+            Some subscription process here
+        </p>
+        <button mat-stroked-button color="primary" matStepperPrevious>Go back</button>
+        <button mat-stroked-button color="acccent" matStepperNext>Next</button>
+    </mat-step>
+    <mat-step [completed]="false" label="Login">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Login here</mat-card-title>
+                <button mat-raised-button color="primary">Login</button>
+            </mat-card-header>
+        </mat-card>
+    </mat-step>
+</mat-horizontal-stepper>
+
+<mat-vertical-stepper linear>
+    <mat-step [completed]="true" label="Creating Account">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Complete step one to proceed</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </mat-step>
+    <mat-step [completed]="false" label="Subscription">
+        <p class="mat-body-1">
+            Some subscription process here
+        </p>
+        <button mat-stroked-button color="primary" matStepperPrevious>Go back</button>
+        <button mat-stroked-button color="acccent" matStepperNext>Next</button>
+    </mat-step>
+    <mat-step [completed]="false" label="Login">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Login here</mat-card-title>
+                <button mat-raised-button color="primary">Login</button>
+            </mat-card-header>
+        </mat-card>
+    </mat-step>
+</mat-vertical-stepper>

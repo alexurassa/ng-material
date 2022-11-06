@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatCardModule } from '@angular/material/card'
+import { MatStepperModule } from '@angular/material/stepper'
 
 
 const materialModules: Array<any> = [
@@ -27,7 +28,8 @@ const materialModules: Array<any> = [
   MatDividerModule,
   MatGridListModule,
   MatExpansionModule,
-  MatCardModule
+  MatCardModule,
+  MatStepperModule 
 ]
 
 
