@@ -1,1 +1,15 @@
-<p>mat-dialog-template works!</p>
+<!-- <p>mat-dialog-template works!</p> -->
+<div class="container">
+    <h2 mat-dialog-title>Session timeout</h2>
+    <mat-dialog-content>
+        <h4 class="mat-title">Hi, {{ data.user.name }}</h4>
+        <p class="mat-body-2">
+            Your session has been timed out, you will be logged out due to inactivity.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" mat-dialog-close [mat-dialog-close]="true">Keep Me Logged in!</button>
+        <button mat-raised-button color="warn" mat-dialog-close [mat-dialog-close]="false">Logout</button>
+    </mat-dialog-actions>
+</div>

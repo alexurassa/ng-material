@@ -57,7 +57,7 @@ import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat
     MatSnackbarComponent,
     CustomSnackBarComponent
   ],
-  entryComponents: [CustomSnackBarComponent],
+  entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [
     CommonModule,
     AngularMaterialModulesModule,

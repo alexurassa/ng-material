@@ -22,6 +22,7 @@ import { MatCheckboxRadioComponent } from './components/mat-checkbox-radio/mat-c
 import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepicker.component';
 import { MatTooltipComponent } from './components/mat-tooltip/mat-tooltip.component';
 import { MatSnackbarComponent } from './components/mat-snackbar/mat-snackbar.component';
+import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
        { path: 'datepicker', component: MatDatepickerComponent, title: 'datePicker' },
        { path: 'tooltip', component: MatTooltipComponent, title: 'Tooltip' },
        { path: 'snackbar', component: MatSnackbarComponent, title: 'SnackBar' },
+       { path: 'dialog', component: MatDialogComponent, title: 'Dialog Demo' },
      ]
   },
 ]
