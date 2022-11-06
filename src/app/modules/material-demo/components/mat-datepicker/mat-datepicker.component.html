@@ -1,0 +1,7 @@
+<mat-form-field floatLabel="auto" color="primary">
+    <mat-label>Select date</mat-label>
+    <input matInput [matDatepicker]="workdaysPicker" [min]="minDate" [max]="maxDate" />
+    <!-- [matDatepickerFilter]="dateFilter" -->
+    <mat-datepicker-toggle [for]="workdaysPicker" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #workdaysPicker startView="year"></mat-datepicker>
+</mat-form-field>

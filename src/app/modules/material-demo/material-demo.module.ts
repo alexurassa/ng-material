@@ -21,6 +21,7 @@ import { MatInputComponent } from './components/mat-input/mat-input.component';
 import { MatSelectComponent } from './components/mat-select/mat-select.component';
 import { MatAutocompleteComponent } from './components/mat-autocomplete/mat-autocomplete.component';
 import { MatCheckboxRadioComponent } from './components/mat-checkbox-radio/mat-checkbox-radio.component';
+import { MatDatepickerComponent } from './components/mat-datepicker/mat-datepicker.component';
 
 
 
@@ -44,7 +45,8 @@ import { MatCheckboxRadioComponent } from './components/mat-checkbox-radio/mat-c
     MatInputComponent,
     MatSelectComponent,
     MatAutocompleteComponent,
-    MatCheckboxRadioComponent
+    MatCheckboxRadioComponent,
+    MatDatepickerComponent
   ],
   imports: [
     CommonModule,
