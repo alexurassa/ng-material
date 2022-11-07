@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table'
 import { MatSort } from '@angular/material/sort'
 import { MatPaginator } from '@angular/material/paginator'
@@ -12,10 +12,10 @@ interface User {
 
 
 const USERS: Array<User> = [
-  { fullName: 'John Peterson', age: 10, country: 'Ireland' },
-  { fullName: 'Alex Urassa', age: 10, country: 'Tanzania' },
-  { fullName: 'Alice Linda', age: 10, country: 'Ethiopia' },
-  { fullName: 'Mary Frankfurt', age: 10, country: 'Uganda' },
+  { fullName: 'John Peterson', age: 15, country: 'Ireland' },
+  { fullName: 'Alex Urassa', age: 13, country: 'Tanzania' },
+  { fullName: 'Alice Linda', age: 27, country: 'Ethiopia' },
+  { fullName: 'Mary Frankfurt', age: 41, country: 'Uganda' },
   { fullName: 'Doe Alsen', age: 10, country: 'Malawi' },
   { fullName: 'Livingstone Omari', age: 23, country: 'South Africa' },
 ]
@@ -27,9 +27,9 @@ const USERS: Array<User> = [
   styles: [
   ]
 })
-export class MatDataTableComponent implements OnInit {
+export class MatDataTableComponent implements OnInit, AfterViewInit {
 
-  usersDataSource: MatTableDataSource<User> = new MatTableDataSource(USERS)
+  usersDataSource!: MatTableDataSource<User>;
   usersTableColumns: string[] = ['fullName', 'age', 'country']
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -46,7 +46,11 @@ export class MatDataTableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.usersDataSource = new MatTableDataSource<User>(USERS)
+  }
+
+  public ngAfterViewInit(): void {
     this.usersDataSource.sort = this.sort 
     this.usersDataSource.paginator = this.paginator 
   }
