@@ -1,7 +1,7 @@
 <section class="container">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="standard">
         <mat-label>Search</mat-label>
-        <input matInput (keyup)="filterTable($event)" placeholder="search..." />
+        <input #searchInput matInput (keyup)="filterTable($event)" placeholder="search..." />
     </mat-form-field>
 
     <div class="table mat-elevation-z2">
@@ -25,6 +25,9 @@
                 (click)="clickedRows.add(row)"
                 [class.data-row-clicked]="clickedRows.has(row)">
             </mat-row>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="2">No record matching {{ searchInput.value }}</td>
+            </tr>
         </mat-table>
         <mat-paginator [pageSizeOptions]="[2, 3, 10]" [showFirstLastButtons]="true"></mat-paginator>
     </div>

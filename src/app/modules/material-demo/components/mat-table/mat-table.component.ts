@@ -47,8 +47,9 @@ export class MatTableComponent implements OnInit, AfterViewInit {
   }
 
 
-  public filterTable($event: any): void {
-    this.customersDataSource.filter = $event.target.value.trim().toLowerCase()
+  public filterTable($event: Event): void {
+    const filterValue: string = ($event.target as HTMLInputElement).value
+    this.customersDataSource.filter = filterValue.trim().toLowerCase()
   }
 
 
