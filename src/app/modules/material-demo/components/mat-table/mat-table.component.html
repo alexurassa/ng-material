@@ -1,16 +1,21 @@
 <section class="container">
+    <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="filterTable($event)" placeholder="search..." />
+    </mat-form-field>
+
     <div class="table mat-elevation-z2">
-        <mat-table [dataSource]="customersDataSource" customers-table>
+        <mat-table [dataSource]="customersDataSource" matSort (matSortChange)="annouceMatSortChange($event)" customers-table>
 
             <!-- customerName column -->
             <ng-container matColumnDef="customerName">
-                <mat-header-cell *matHeaderCellDef>Customer Name</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Customer Name">Customer Name</mat-header-cell>
                 <mat-cell *matCellDef="let customer">{{ customer.customerName }}</mat-cell>
             </ng-container>
         
             <!-- city column -->
             <ng-container matColumnDef="city">
-                <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by City">City</mat-header-cell>
                 <mat-cell *matCellDef="let customer">{{ customer.city }}</mat-cell>
             </ng-container>
         
@@ -21,7 +26,7 @@
                 [class.data-row-clicked]="clickedRows.has(row)">
             </mat-row>
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[1, 2, 3]" [showFirstLastButtons]="true"></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[2, 3, 10]" [showFirstLastButtons]="true"></mat-paginator>
     </div>
 
     <div>

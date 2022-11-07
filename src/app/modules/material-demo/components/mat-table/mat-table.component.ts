@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator'
+import { MatSort, Sort } from '@angular/material/sort'
+import { LiveAnnouncer } from '@angular/cdk/a11y'
 
 
 interface Customer {
@@ -31,15 +33,34 @@ export class MatTableComponent implements OnInit, AfterViewInit {
   fields: Array<string> = ['customerName', 'city']
   clickedRows: Set<Customer> = new Set<Customer>()
   @ViewChild(MatPaginator) public customersPaginator!: MatPaginator
+  @ViewChild(MatSort) public matSort!: MatSort 
 
-  constructor() { }
 
-  ngOnInit(): void {
+  public annouceMatSortChange(sortState: Sort): void {
+    if(sortState.direction) {
+      console.log(`Sorted ${sortState.direction}`)
+    }else {
+      console.info("The sort has cleared")
+    }
+
+    console.info(`Sort has been done on ${sortState.active} column`)
+  }
+
+
+  public filterTable($event: any): void {
+    this.customersDataSource.filter = $event.target.value.trim().toLowerCase()
+  }
+
+
+  public ngOnInit(): void {
     this.customersDataSource = new MatTableDataSource<Customer>(CUSTOMERS)
   }
 
   public ngAfterViewInit(): void {
     this.customersDataSource.paginator = this.customersPaginator
+    this.customersDataSource.sort = this.matSort 
   }
+
+  public constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
 }
