@@ -1,0 +1,13 @@
+.container {
+    display: block;
+    width: 70%;
+    margin: 3rem auto;
+}
+
+.data-row-clicked {
+    font-weight: bold;
+}
+
+.mat-column-city {
+    font-style: italic;
+}

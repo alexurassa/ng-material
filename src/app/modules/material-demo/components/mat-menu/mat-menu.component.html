@@ -15,6 +15,9 @@
     >
     Trigger lazy Friend1
 </button>
+
+<button mat-raised-button [matMenuTriggerFor]="actionsMenu">Trigger menu</button>
+
     </mat-sidenav-content>
 </mat-sidenav-container>
 
@@ -37,6 +40,26 @@
     <ng-template matMenuContent let-name="name" let-hobby="hobby">
         <span mat-menu-item>{{ name }}</span>
         <span mat-menu-item>His/Her hobby is {{ hobby }}</span>
+    </ng-template>
+</mat-menu>
+
+
+
+<mat-menu #actionsMenu="matMenu" xPosition="after" yPosition="below">
+    <ng-template matMenuContent>
+        <span 
+            *ngFor="let num of [1, 2, 3]" 
+            mat-menu-item 
+            [matMenuTriggerFor]="actionSubmenu"
+            [matMenuTriggerData]="{ passedNum: num}"
+            >Action</span>
+    </ng-template>
+</mat-menu>
+
+
+<mat-menu #actionSubmenu="matMenu">
+    <ng-template matMenuContent let-passedNum="passedNum">
+        <span *ngFor="let subNum of [1, 2]" mat-menu-item>sub {{ passedNum }}-{{ subNum }}</span>
     </ng-template>
 </mat-menu>
 

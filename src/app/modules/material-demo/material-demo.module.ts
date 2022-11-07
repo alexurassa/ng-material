@@ -29,6 +29,7 @@ import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component
 import { MatDialogTemplateComponent } from './components/mat-dialog-template/mat-dialog-template.component';
 import { MatDataTableComponent } from './components/mat-data-table/mat-data-table.component';
 import { VirtualScrollingComponent } from './components/virtual-scrolling/virtual-scrolling.component';
+import { MatTableComponent } from './components/mat-table/mat-table.component';
 
 
 
@@ -60,7 +61,8 @@ import { VirtualScrollingComponent } from './components/virtual-scrolling/virtua
     MatSnackbarComponent,
     CustomSnackBarComponent,
     MatDataTableComponent,
-    VirtualScrollingComponent
+    VirtualScrollingComponent,
+    MatTableComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [
