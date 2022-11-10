@@ -10,6 +10,8 @@ export class MatSelectComponent implements OnInit {
 
   public selectedValue: string = ''
 
+  numbers: number[] = [1,2,3,4]
+
   constructor() { }
 
   ngOnInit(): void {

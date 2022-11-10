@@ -1,23 +1,32 @@
 <mat-form-field floatLabel="auto" apperance="fill" color="primary">
-    <mat-label>Topic</mat-label>
-    <mat-select [(ngModel)]="selectedValue" multiple>
-        <mat-option>None</mat-option>
-        <mat-optgroup label="Web">
-            <mat-option value="angular">Angular</mat-option>
-            <mat-option value="react">React</mat-option>
-            <mat-option value="vue">Vue</mat-option>
-        </mat-optgroup>
-        <mat-optgroup label="Mobile">
-            <mat-option value="ionic">Ionic</mat-option>
-            <mat-option value="reactNative">React Native</mat-option>
-        </mat-optgroup>
-    </mat-select>
-    <mat-hint align="end">Choose your Topic/s </mat-hint>
+  <mat-label>Topic</mat-label>
+  <mat-select [(ngModel)]="selectedValue" multiple>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web">
+      <mat-option value="angular">Angular</mat-option>
+      <mat-option value="react">React</mat-option>
+      <mat-option value="vue">Vue</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="Mobile">
+      <mat-option value="ionic">Ionic</mat-option>
+      <mat-option value="reactNative">React Native</mat-option>
+    </mat-optgroup>
+  </mat-select>
+  <mat-hint align="end">Choose your Topic/s </mat-hint>
+</mat-form-field>
+
+<mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Select a Number:</mat-label>
+  <mat-select required>
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let item of numbers; let i = index;">Nmber {{ item }}-{{ i }}</mat-option>
+  </mat-select>
+  <mat-hint>something descriptive</mat-hint>
 </mat-form-field>
 
 <p class="mat-body-2">{{ selectedValue }}</p>
 <style>
-    mat-form-field {
-        margin: 2rem;
-    }
+  mat-form-field {
+    margin: 2rem;
+  }
 </style>
