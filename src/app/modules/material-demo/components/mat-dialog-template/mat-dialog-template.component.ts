@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
+import { User } from '../mat-dialog/mat-dialog.component';
 
 @Component({
   selector: 'app-mat-dialog-template',
@@ -10,9 +11,12 @@ import { Inject } from '@angular/core';
 })
 export class MatDialogTemplateComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    
   }
 
+  public constructor(@Inject(MAT_DIALOG_DATA) public data: { user: User}) {
+
+  }
 }

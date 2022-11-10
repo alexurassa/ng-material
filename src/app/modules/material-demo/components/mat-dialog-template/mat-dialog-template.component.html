@@ -1,6 +1,6 @@
 <!-- <p>mat-dialog-template works!</p> -->
 <div class="container">
-    <h2 mat-dialog-title>Session timeout</h2>
+    <h2 matDialogTitle align="start">Session timeout</h2>
     <mat-dialog-content>
         <h4 class="mat-title">Hi, {{ data.user.name }}</h4>
         <p class="mat-body-2">
@@ -9,7 +9,7 @@
         </p>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-        <button mat-raised-button color="primary" mat-dialog-close [mat-dialog-close]="true">Keep Me Logged in!</button>
-        <button mat-raised-button color="warn" mat-dialog-close [mat-dialog-close]="false">Logout</button>
+        <button mat-stroked-button color="primary" matDialogClose [matDialogClose]="true">Keep Me Logged in!</button>
+        <button mat-raised-button color="warn" matDialogClose [matDialogClose]="false">Logout</button>
     </mat-dialog-actions>
 </div>

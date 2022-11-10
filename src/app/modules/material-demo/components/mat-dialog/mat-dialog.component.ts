@@ -11,14 +11,28 @@ import { MatDialogTemplateComponent } from '../mat-dialog-template/mat-dialog-te
 })
 export class MatDialogComponent implements OnInit {
 
-  user!: User;
+  public user: User | undefined;
 
   public openDialog(): void {
     const dialogRef = this.matDialog.open(
-      MatDialogTemplateComponent, { data: { user: this.user }})
+      MatDialogTemplateComponent, { 
+        data: { user: this.user }, 
+        disableClose: true, 
+        hasBackdrop: true, 
+        height: "500px", width: "700px",
+        role: 'alertdialog',
+      }
+    )
 
-    dialogRef.afterClosed().subscribe(
-      result => console.log(`Dialog result is: ${result}`))
+    dialogRef.afterClosed().subscribe(result => console.log(`the dialog close result: ${ result }`))
+    dialogRef.backdropClick().subscribe(($event: PointerEvent | MouseEvent) => {
+      dialogRef.close()
+      $event.type == 'click' ? this.log('backdrop was closed with click') : '';
+    })
+  }
+
+  public log(message: string): void {
+    console.log(message)
   }
 
   constructor(private matDialog: MatDialog) { }
@@ -33,7 +47,7 @@ export class MatDialogComponent implements OnInit {
 
 }
 
-interface User {
+export interface User {
   name: string;
   age: number;
   city: string;
