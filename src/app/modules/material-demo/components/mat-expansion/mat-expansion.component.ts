@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-mat-expansion',
   templateUrl: './mat-expansion.component.html',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatExpansionComponent implements OnInit {
 
-
+  items: Array<number> = [1, 2, 3, 4, 5, 6]
   public log(status: string): void {
     console.log(`The panel status is ${status}`)
   }
@@ -17,5 +18,4 @@ export class MatExpansionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-accordion multi="false" [hideToggle]="false">
+    <mat-accordion multi="false" [hideToggle]="true">
         <mat-expansion-panel (closed)="log('panel1 closed')" (opened)="log('panel 1 is opened')">
             <mat-expansion-panel-header>
                 <mat-panel-title>Angular Material</mat-panel-title>
@@ -42,6 +42,32 @@
     </mat-accordion>
 
     <button mat-stroked-button color="warn" (click)="panel2.toggle()">Toggle panel2</button>
+
+
+    <mat-accordion>
+        <ng-template matExpansionPanelContent ngFor let-item [ngForOf]="items">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Panel Title {{ item }}</mat-panel-title>
+                    <mat-panel-description>Panel Description {{ item }}</mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-list dense>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>home</mat-icon>
+                        <p matLine class="mat-headline">List item {{ item }}</p>
+                        <p matLine class="mat-body-2">List item {{ item }}</p>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>home</mat-icon>
+                        <p matLine class="mat-headline">List item {{ item }}</p>
+                        <p matLine class="mat-body-2">List item {{ item }}</p>
+                    </mat-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+
+        </ng-template>
+    </mat-accordion>
 </div>
 
 
@@ -51,5 +77,9 @@
         width:500px;
         display: block;
         margin: 3rem auto;
+    }
+
+    mat-accordion {
+        margin-bottom: 3rem;
     }
 </style>
