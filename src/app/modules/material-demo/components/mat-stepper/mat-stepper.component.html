@@ -47,3 +47,26 @@
         </mat-card>
     </mat-step>
 </mat-vertical-stepper>
+
+
+
+<mat-vertical-stepper>
+    <ng-template ngFor let-user [ngForOf]="users">
+        <mat-step [label]="user.username" color="accent">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>title 1</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    The contents of step goes here
+                </mat-card-content>
+                <mat-card-footer>
+                    <mat-card-actions [align]="user.username == 'my username' ? 'end' : 'start' ">
+                        <button mat-stroked-button color="accent">Action</button>
+                        <button mat-stroked-button color="accent">Action</button>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </mat-step>
+    </ng-template>
+</mat-vertical-stepper>
