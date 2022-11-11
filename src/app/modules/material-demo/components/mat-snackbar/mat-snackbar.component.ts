@@ -65,10 +65,6 @@ export class MatSnackbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void {
-
-  }
-
   constructor(private snackBar: MatSnackBar) { }
 }
 
