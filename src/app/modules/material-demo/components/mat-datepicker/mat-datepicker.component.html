@@ -1,7 +1,25 @@
-<mat-form-field floatLabel="auto" color="primary">
-    <mat-label>Select date</mat-label>
-    <input matInput [matDatepicker]="workdaysPicker" [min]="minDate" [max]="maxDate" />
-    <!-- [matDatepickerFilter]="dateFilter" -->
-    <mat-datepicker-toggle [for]="workdaysPicker" matSuffix></mat-datepicker-toggle>
-    <mat-datepicker #workdaysPicker startView="year"></mat-datepicker>
-</mat-form-field>
+<div class="container">
+    <mat-form-field floatLabel="auto" color="primary" class="mat-block">
+        <mat-label>Select date</mat-label>
+        <input matInput [matDatepicker]="workdaysPicker" [min]="minDate" [max]="maxDate" />
+        <!-- [matDatepickerFilter]="dateFilter" -->
+        <mat-datepicker-toggle [for]="workdaysPicker" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #workdaysPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field apppearance="outline" floatLabel="always">
+        <mat-label>Select date</mat-label>
+
+        <mat-date-range-input
+            [formGroup]="groupOne"
+            [rangePicker]="groupOnePicker"
+            [comparisonStart]="groupOne.value.start"
+            [comparisonEnd]="groupOne.value.end"
+        >
+            <input matStartDate formControlName="start" placeholder="Start date..." />
+            <input matEndDate formControlName="end" placeholder="Start date..." />
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="groupOnePicker"></mat-datepicker-toggle>
+        <mat-date-range-picker #groupOnePicker></mat-date-range-picker>
+    </mat-form-field>
+</div>
