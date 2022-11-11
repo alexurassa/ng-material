@@ -6,10 +6,11 @@
         <mat-datepicker-toggle [for]="workdaysPicker" matSuffix></mat-datepicker-toggle>
         <mat-datepicker #workdaysPicker></mat-datepicker>
     </mat-form-field>
+    <button mat-button (click)="workdaysPicker.open()">Open Picker</button>
+    
 
-    <mat-form-field apppearance="outline" floatLabel="always">
+    <mat-form-field apperance="standard" floatLabel="always">
         <mat-label>Select date</mat-label>
-
         <mat-date-range-input
             [formGroup]="groupOne"
             [rangePicker]="groupOnePicker"
@@ -22,4 +23,61 @@
         <mat-datepicker-toggle matSuffix [for]="groupOnePicker"></mat-datepicker-toggle>
         <mat-date-range-picker #groupOnePicker></mat-date-range-picker>
     </mat-form-field>
+
+
+    <mat-form-field appearance="outline" color="primary">
+        <mat-label>Select date range</mat-label>
+        <mat-date-range-input [formGroup]="range" [rangePicker]="pickerWithErrorMsg">
+            <input matStartDate formControlName="start" placeholder="Start date" />
+            <input matEndDate formControlName="end" placeholder="End date" />
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerWithErrorMsg"></mat-datepicker-toggle>
+        <mat-date-range-picker #pickerWithErrorMsg></mat-date-range-picker>
+
+        <mat-error *ngIf="range.controls['start'].hasError('matStartDateInvalid')">Start date is Invalid</mat-error>
+        <mat-error *ngIf="range.controls['end'].hasError('matEndDateInvalid')">End date is Invalid</mat-error>
+    </mat-form-field>
+    <span matLine class="mat-small">Selected range: {{ range.value | json }}</span>
+
+
+    <div class="inline">
+        <mat-form-field appearance="outline">
+            <mat-label>Select date</mat-label>
+            <input matInput [matDatepicker]="pickerWithActions" placeholder="select date." />
+            <mat-datepicker-toggle matSuffix [for]="pickerWithActions"></mat-datepicker-toggle>
+            <mat-datepicker #pickerWithActions>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="accent" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select range</mat-label>
+            <mat-date-range-input [rangePicker]="rangePickerWithActions">
+                <input matInput matStartDate  placeholder="Start date"/>
+                <input matInput matEndDate  placeholder="End date"/>
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="rangePickerWithActions"></mat-datepicker-toggle>
+            <mat-date-range-picker #rangePickerWithActions>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button matDatepickerApply color="warn">Apply</button>
+                </mat-datepicker-actions>
+            </mat-date-range-picker>
+            <mat-hint>Format: MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
 </div>

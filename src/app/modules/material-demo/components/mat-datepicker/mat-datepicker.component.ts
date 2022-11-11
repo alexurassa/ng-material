@@ -21,6 +21,11 @@ export class MatDatepickerComponent implements OnInit {
     end: new FormControl(new Date())
   })
 
+  range: FormGroup = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null)
+  })
+
   // dateFilter = (date: Date | null) => {
   //   const day: number = date.getDay()
   //   return day !== 0 && day !== 6

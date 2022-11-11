@@ -8,3 +8,8 @@ mat-form-field {
 	display: block;
 	margin: 3rem auto;
 }
+
+.inline {
+	display: inline-flex;
+	margin-right: 1rem;
+}
