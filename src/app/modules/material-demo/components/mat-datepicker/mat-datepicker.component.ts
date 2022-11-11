@@ -10,6 +10,8 @@ export class MatDatepickerComponent implements OnInit {
 
   minDate: Date = new Date()
   maxDate: Date = new Date(2022, 10, 20)
+  selectedDate!: Date;
+  startDate: Date = new Date(2022, 8, 14)
 
   groupOne: FormGroup = new FormGroup({
     start: new FormControl(new Date()),
@@ -26,10 +28,10 @@ export class MatDatepickerComponent implements OnInit {
     end: new FormControl<Date | null>(null)
   })
 
-  // dateFilter = (date: Date | null) => {
-  //   const day: number = date.getDay()
-  //   return day !== 0 && day !== 6
-  // }
+  dateFilter = (dateInput: Date | null): boolean => {
+    const day = dateInput?.getDay()
+    return day !== 0 && day !== 6
+  }
 
   constructor() { }
 
