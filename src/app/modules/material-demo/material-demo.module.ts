@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { AngularMaterialModulesModule } from '@ng-material-modules/angular-material-modules.module';
@@ -70,6 +70,7 @@ import { MatTableComponent } from './components/mat-table/mat-table.component';
     AngularMaterialModulesModule,
     MaterialDemoRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     ScrollingModule
   ],
   exports: [

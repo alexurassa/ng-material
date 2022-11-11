@@ -1,5 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatSnackBar, MatSnackBarRef, MAT_SNACK_BAR_DATA, TextOnlySnackBar } from '@angular/material/snack-bar';
+import { Component, OnInit, Inject, ViewChild, TemplateRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatSnackBar, MatSnackBarRef, MAT_SNACK_BAR_DATA, SimpleSnackBar, TextOnlySnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-mat-snackbar',
@@ -8,6 +9,37 @@ import { MatSnackBar, MatSnackBarRef, MAT_SNACK_BAR_DATA, TextOnlySnackBar } fro
   ]
 })
 export class MatSnackbarComponent implements OnInit {
+
+  horizontalOptions: string[] = ['start', 'end', 'center', 'left', 'right']
+  verticalOptions: string[]  = ['bottom', 'top']
+  yPosition: FormControl = new FormControl<string>('top');
+  xPosition: FormControl = new FormControl<string>('right');
+  snackbarDuration: FormControl = new FormControl<number>(1000)
+
+  @ViewChild("snackbarTemplate") public template!: TemplateRef<any>
+  simpleSnackBar!: SimpleSnackBar
+
+  public openSnackbar(message: string, action: string): void {
+    this.snackBar.open(message, action, {
+      duration: this.snackbarDuration.value,
+      horizontalPosition: this.xPosition.value,
+      verticalPosition: this.yPosition.value 
+    })
+
+  }
+
+  public openFromTemplate(): void {
+    this.snackBar.openFromTemplate(this.template, { 
+      duration: this.snackbarDuration.value,
+      horizontalPosition: this.xPosition.value,
+      verticalPosition: this.yPosition.value 
+    })
+  }
+
+  public openSimpleSnackbar(message: string, action: string): void {
+    this.simpleSnackBar.hasAction 
+    this.simpleSnackBar.data = {message: message, action: action}
+  }
 
   public openSnackBar(message: string, action: string): void {
     const snackbarRef: MatSnackBarRef<TextOnlySnackBar> = this.snackBar.open(
@@ -31,6 +63,10 @@ export class MatSnackbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
   constructor(private snackBar: MatSnackBar) { }

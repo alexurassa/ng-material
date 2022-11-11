@@ -1,6 +1,17 @@
-<button mat-raised-button (click)="openSnackBar('Category deleted', 'Undo')">
-  Delete Category
-</button>
+<div class="mat-block">
+  <mat-form-field appearance="fill">
+    <mat-label>Snackbar message</mat-label>
+    <input #message  type="text" matInput value="SnackBar Message" />
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Snackbar Action</mat-label>
+    <input #action type="text" matInput value="Action" />
+  </mat-form-field>
+</div>
+
+<button mat-raised-button (click)="openSnackBar('Category deleted', 'Undo')"> Delete Category</button>
+<button mat-button (click)="openSnackBar(message.value, action.value)">show snack-bar</button>
 
 <button
   mat-raised-button
@@ -10,8 +21,47 @@
   Open from Component
 </button>
 
+<br>
+
+<div class="mat-block">
+  <span class="mat-block">
+    <mat-form-field appearance="outline" floatLabel="never">
+      <mat-label>XPosition</mat-label>
+      <mat-select [formControl]="xPosition" matInput >
+        <mat-option *ngFor="let xPos of horizontalOptions" [value]="xPos">{{ xPos }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </span>
+  <span class="mat-block">
+    <mat-form-field appearance="outline" floatLabel="auto">
+      <mat-label>YPosition</mat-label>
+      <mat-select [formControl]="yPosition" matInput >
+        <mat-option *ngFor="let yPos of verticalOptions" [value]="yPos">{{ yPos }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </span>
+  <span class="mat-block">
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Duration</mat-label>
+      <input type="number" [attr.step]="500" [formControl]="snackbarDuration" matInput />
+    </mat-form-field>
+  </span>
+
+  <button mat-raised-button color="accent" (click)="openSnackbar('Awesome snackbar', 'Click Action')">Open Snackbar</button>
+  <button mat-raised-button color="warn" (click)="openFromTemplate()">Open from Template</button>
+</div>
+
+
+<ng-template #snackbarTemplate>
+  <span class="mat-body-1">Snackbar is called from Template</span>
+</ng-template>
+
 <style>
   button {
     margin: 2rem;
+  }
+
+  mat-form-field {
+    margin-right: 1rem;
   }
 </style>
