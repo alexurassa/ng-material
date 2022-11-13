@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-mat-tooltip',
   templateUrl: './mat-tooltip.component.html',
-  styles: [
-  ]
+  styleUrls: ['./mat-tooltip.component.css']
 })
 export class MatTooltipComponent implements OnInit {
 

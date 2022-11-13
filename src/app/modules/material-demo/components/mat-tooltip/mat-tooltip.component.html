@@ -1,9 +1,11 @@
-<button
-  mat-raised-button
-  matTooltip
-  matTooltipPosition="after"
-  matTooltipShowDelay="2000"
-  matTooltipHideDelay="2000"
->
-  Hello
-</button>
+<div class="container">
+  <button
+    mat-button
+    matTooltip
+    matTooltipPosition="after"
+    [matTooltipHideDelay]="2000"
+    [matTooltipShowDelay]="2000"
+  >
+    Hover to show tooltip
+  </button>
+</div>
