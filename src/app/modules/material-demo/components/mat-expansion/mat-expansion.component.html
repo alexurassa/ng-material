@@ -1,85 +1,142 @@
 <div class="container">
+  <span class="accordion-example">
     <mat-accordion multi="false" [hideToggle]="true">
-        <mat-expansion-panel (closed)="log('panel1 closed')" (opened)="log('panel 1 is opened')">
-            <mat-expansion-panel-header>
-                <mat-panel-title>Angular Material</mat-panel-title>
-                <mat-panel-description>Course Duration 3:00 hrs</mat-panel-description>
-            </mat-expansion-panel-header>
-            <div>
-                <p class="mat-subheadline-1">
-                    Expansion panel content
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Laboriosam, quas quisquam harum ex natus eaque voluptatibus 
-                    ea eius sed iusto, explicabo cupiditate veritatis sunt 
-                    assumenda consequatur nisi maxime aperiam porro!
-                </p>
-            </div>
-            <mat-action-row>
-                <button mat-stroked-button color="primary">Later</button>
-                <button mat-stroked-button color="accent">Enroll Now</button>
-            </mat-action-row>
-        </mat-expansion-panel>
-    
-        <mat-expansion-panel #panel2="matExpansionPanel">
-            <mat-expansion-panel-header>
-                <mat-panel-title>Angular Hero Tutorial</mat-panel-title>
-                <mat-panel-description>Course Duration 2:30 hrs</mat-panel-description>
-            </mat-expansion-panel-header>
-            <div>
-                <p class="mat-body-2">
-                    Expansion panel content
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Laboriosam, quas quisquam harum ex natus eaque voluptatibus 
-                    ea eius sed iusto, explicabo cupiditate veritatis sunt 
-                    assumenda consequatur nisi maxime aperiam porro!
-                </p>
-            </div>
-            <mat-action-row>
-                <button mat-stroked-button color="primary">Later</button>
-                <button mat-raised-button color="accent">Enroll Now</button>
-            </mat-action-row>
-        </mat-expansion-panel>
+      <mat-expansion-panel
+        (closed)="log('panel1 closed')"
+        (opened)="log('panel 1 is opened')"
+      >
+        <mat-expansion-panel-header
+          expandedHeight="200px"
+          collapsedHeight="100px"
+        >
+          <mat-panel-title>Angular Material</mat-panel-title>
+          <mat-panel-description
+            >Course Duration 3:00 hrs</mat-panel-description
+          >
+        </mat-expansion-panel-header>
+        <div>
+          <p class="mat-subheadline-1">
+            Expansion panel content Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Laboriosam, quas quisquam harum ex natus eaque
+            voluptatibus ea eius sed iusto, explicabo cupiditate veritatis sunt
+            assumenda consequatur nisi maxime aperiam porro!
+          </p>
+        </div>
+        <mat-action-row>
+          <button mat-stroked-button color="primary">Later</button>
+          <button mat-stroked-button color="accent">Enroll Now</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel #panel2="matExpansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Angular Hero Tutorial</mat-panel-title>
+          <mat-panel-description
+            >Course Duration 2:30 hrs</mat-panel-description
+          >
+        </mat-expansion-panel-header>
+        <div>
+          <p class="mat-body-2">
+            Expansion panel content Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Laboriosam, quas quisquam harum ex natus eaque
+            voluptatibus ea eius sed iusto, explicabo cupiditate veritatis sunt
+            assumenda consequatur nisi maxime aperiam porro!
+          </p>
+        </div>
+        <mat-action-row>
+          <button mat-stroked-button color="primary">Later</button>
+          <button mat-raised-button color="accent">Enroll Now</button>
+        </mat-action-row>
+      </mat-expansion-panel>
     </mat-accordion>
+  </span>
 
-    <button mat-stroked-button color="warn" (click)="panel2.toggle()">Toggle panel2</button>
+  <button mat-stroked-button color="warn" (click)="panel2.toggle()">
+    Toggle panel2
+  </button>
 
-
+  <span class="accordion-example">
     <mat-accordion>
-        <ng-template matExpansionPanelContent ngFor let-item [ngForOf]="items">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>Panel Title {{ item }}</mat-panel-title>
-                    <mat-panel-description>Panel Description {{ item }}</mat-panel-description>
-                </mat-expansion-panel-header>
-                <mat-list dense>
-                    <mat-list-item>
-                        <mat-icon mat-list-icon>home</mat-icon>
-                        <p matLine class="mat-headline">List item {{ item }}</p>
-                        <p matLine class="mat-body-2">List item {{ item }}</p>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <mat-icon mat-list-icon>home</mat-icon>
-                        <p matLine class="mat-headline">List item {{ item }}</p>
-                        <p matLine class="mat-body-2">List item {{ item }}</p>
-                    </mat-list-item>
-                </mat-list>
-            </mat-expansion-panel>
-
-        </ng-template>
+      <ng-template matExpansionPanelContent ngFor let-item [ngForOf]="items">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Panel Title {{ item }}</mat-panel-title>
+            <mat-panel-description
+              >Panel Description {{ item }}</mat-panel-description
+            >
+          </mat-expansion-panel-header>
+          <mat-list dense>
+            <mat-list-item>
+              <mat-icon
+                mat-list-icon
+                fontIcon="home"
+                color="primary"
+              ></mat-icon>
+              <p matLine class="mat-headline">List item {{ item }}</p>
+              <p matLine class="mat-body-2">List item {{ item }}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <mat-icon mat-list-icon fontIcon="code" color="warn"></mat-icon>
+              <p matLine class="mat-headline">List item {{ item }}</p>
+              <p matLine class="mat-body-2">List item {{ item }}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </ng-template>
     </mat-accordion>
+  </span>
+
+  <span class="accordion-example">
+    <mat-accordion multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Personal Information</mat-panel-title>
+          <mat-panel-description>
+            <span>How shall we call you</span>
+            <mat-icon fontIcon="account_circle"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="inline-block">
+          <mat-form-field apperance="fill">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+          <mat-form-field apperance="fill">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Destination</mat-panel-title>
+          <mat-panel-description>
+            Where you are going
+            <mat-icon fontIcon="map"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="">
+          <mat-form-field apperance="fill">
+            <mat-label>Country</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Travel date</mat-panel-title>
+          <mat-panel-description>
+            Tell us when you want a Trip
+            <mat-icon fontIcon="date_range"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Travel date</mat-label>
+          <input type="text" matInput [matDatepicker]="tripPicker" readonly />
+          <mat-datepicker #tripPicker></mat-datepicker>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </span>
 </div>
-
-
-
-<style>
-    .container {
-        width:500px;
-        display: block;
-        margin: 3rem auto;
-    }
-
-    mat-accordion {
-        margin-bottom: 3rem;
-    }
-</style>

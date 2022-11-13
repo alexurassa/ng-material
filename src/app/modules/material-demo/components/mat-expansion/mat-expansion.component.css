@@ -1,0 +1,18 @@
+.mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mat-form-field {
+    margin-left: 1rem;
+}
+
+.container {
+    width:60%;
+    display: block;
+    margin: 3rem auto;
+}
+
+.accordion-example {
+    margin-bottom: 3rem !important;
+}
