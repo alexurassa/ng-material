@@ -133,7 +133,7 @@
         </mat-expansion-panel-header>
         <mat-form-field>
           <mat-label>Travel date</mat-label>
-          <input type="text" matInput [matDatepicker]="tripPicker" readonly />
+          <input type="text" matInput [matDatepicker]="tripPicker" (focus)="tripPicker.open()" readonly />
           <mat-datepicker #tripPicker></mat-datepicker>
         </mat-form-field>
       </mat-expansion-panel>
