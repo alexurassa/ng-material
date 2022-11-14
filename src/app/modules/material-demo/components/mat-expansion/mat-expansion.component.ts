@@ -13,6 +13,20 @@ export class MatExpansionComponent implements OnInit {
     console.log(`The panel status is ${status}`)
   }
 
+  step: number = 1;
+
+  public setStep(index: number): void {
+    this.step = index;
+  }
+
+  public nextStep(): void {
+    this.step++;
+  }
+
+  public prevStep(): void {
+    this.step--;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

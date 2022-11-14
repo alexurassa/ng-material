@@ -1,18 +1,11 @@
 <div class="container">
+  <!-- First accordion -->
   <span class="accordion-example">
-    <mat-accordion multi="false" [hideToggle]="true">
-      <mat-expansion-panel
-        (closed)="log('panel1 closed')"
-        (opened)="log('panel 1 is opened')"
-      >
-        <mat-expansion-panel-header
-          expandedHeight="200px"
-          collapsedHeight="100px"
-        >
+    <mat-accordion multi="false" [hideToggle]="false">
+      <mat-expansion-panel togglePosition="before" (closed)="log('panel1 closed')" (opened)="log('panel 1 is opened')">
+        <mat-expansion-panel-header expandedHeight="200px" collapsedHeight="100px">
           <mat-panel-title>Angular Material</mat-panel-title>
-          <mat-panel-description
-            >Course Duration 3:00 hrs</mat-panel-description
-          >
+          <mat-panel-description>Course Duration 3:00 hrs</mat-panel-description>
         </mat-expansion-panel-header>
         <div>
           <p class="mat-subheadline-1">
@@ -28,12 +21,10 @@
         </mat-action-row>
       </mat-expansion-panel>
 
-      <mat-expansion-panel #panel2="matExpansionPanel">
+      <mat-expansion-panel #panel2="matExpansionPanel" togglePosition="before">
         <mat-expansion-panel-header>
           <mat-panel-title>Angular Hero Tutorial</mat-panel-title>
-          <mat-panel-description
-            >Course Duration 2:30 hrs</mat-panel-description
-          >
+          <mat-panel-description>Course Duration 2:30 hrs</mat-panel-description>
         </mat-expansion-panel-header>
         <div>
           <p class="mat-body-2">
@@ -55,23 +46,19 @@
     Toggle panel2
   </button>
 
+
+  <!-- 2nd accordion -->
   <span class="accordion-example">
     <mat-accordion>
       <ng-template matExpansionPanelContent ngFor let-item [ngForOf]="items">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>Panel Title {{ item }}</mat-panel-title>
-            <mat-panel-description
-              >Panel Description {{ item }}</mat-panel-description
-            >
+            <mat-panel-description>Panel Description {{ item }}</mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list dense>
             <mat-list-item>
-              <mat-icon
-                mat-list-icon
-                fontIcon="home"
-                color="primary"
-              ></mat-icon>
+              <mat-icon mat-list-icon fontIcon="home" color="primary"></mat-icon>
               <p matLine class="mat-headline">List item {{ item }}</p>
               <p matLine class="mat-body-2">List item {{ item }}</p>
             </mat-list-item>
@@ -87,8 +74,14 @@
     </mat-accordion>
   </span>
 
+
+  <!-- 3rd accordion -->
   <span class="accordion-example">
-    <mat-accordion multi>
+    <span class="d-flex-limited">
+      <button mat-raised-button (click)="testAccordion.closeAll()">Close all</button>
+      <button mat-raised-button (click)="testAccordion.openAll()">Open all</button>
+    </span>
+    <mat-accordion multi #testAccordion="matAccordion">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>Personal Information</mat-panel-title>
@@ -136,6 +129,73 @@
           <input type="text" matInput [matDatepicker]="tripPicker" (focus)="tripPicker.open()" readonly />
           <mat-datepicker #tripPicker></mat-datepicker>
         </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </span>
+
+  <!-- 4th accodion -->
+  <span class="accordion-example">
+    <mat-accordion displayMode="flat" #myAccordion="matAccordion">
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Personal Information</mat-panel-title>
+          <mat-panel-description>
+            <span>Enter your personal details</span>
+            <mat-icon fontIcon="account_circle"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="inline-block">
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+        </div>
+        <mat-action-row><button mat-stroked-button color="accent" (click)="nextStep()">Next</button></mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="setStep(2)" [expanded]="step === 2" [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Destination</mat-panel-title>
+          <mat-panel-description>
+            <span>Country you want to travel to.</span>
+            <mat-icon fontIcon="map"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <input type="text" matInput />
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-stroked-button color="primary" (click)="prevStep()">Previous</button>
+          <button mat-stroked-button color="accent" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="setStep(3)" [expanded]="step === 3" [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Travel date</mat-panel-title>
+          <mat-panel-description>
+            <span>Date you want to travel</span>
+            <mat-icon>date_range</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill" color="accent">
+          <mat-label>Date</mat-label>
+          <input type="text" matInput required readonly [matDatepicker]="myDatepicker" (focus)="myDatepicker.open()" />
+          <mat-datepicker #myDatepicker>
+            <mat-datepicker-actions>
+              <button mat-flat-button color="primary" matDatepickerCancel>Cancel</button>
+              <button mat-flat-button color="warn" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-stroked-button color="primary" (click)="prevStep()">Previous</button>
+        </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>
   </span>

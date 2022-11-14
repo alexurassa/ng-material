@@ -11,8 +11,17 @@
     width:60%;
     display: block;
     margin: 3rem auto;
+    padding-bottom: 3rem;
 }
 
 .accordion-example {
     margin-bottom: 3rem !important;
+    display: block;
+}
+
+.d-flex-limited {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
 }
