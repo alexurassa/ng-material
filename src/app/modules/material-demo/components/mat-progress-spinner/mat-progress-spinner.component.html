@@ -1,7 +1,49 @@
-<mat-progress-spinner [value]="progressValue" color="accent"></mat-progress-spinner>
-<mat-progress-spinner value="40"></mat-progress-spinner>
-<mat-progress-spinner value="70" color="warn"></mat-progress-spinner>
-<mat-spinner value="30"></mat-spinner>
+<div class="container">
+  <mat-progress-spinner
+    [value]="progressValue"
+    color="accent"
+  ></mat-progress-spinner>
+  <mat-progress-spinner value="40"></mat-progress-spinner>
+  <mat-progress-spinner value="70" color="warn"></mat-progress-spinner>
+  <mat-spinner value="30"></mat-spinner>
+
+  <button mat-stroked-button color="accent" (click)="updateProgressValue()">
+    update value
+  </button>
 
 
-<button mat-stroked-button color="accent" (click)="updateProgressValue()">update value</button>
+  <mat-card>
+    <mat-card-header>
+        <h3 mat-card-title>Progress Spinner configurations</h3>
+    </mat-card-header>
+    <mat-card-content>
+        <div matLine>
+            <mat-checkbox *ngFor="let color of materialColors" [value]="color" [(ngModel)]="colorTheme">{{ color }}</mat-checkbox>
+        </div>
+        <mat-radio-group [(ngModel)]="progressMode">
+            <mat-radio-button value="determinate">Determinate</mat-radio-button>
+            <mat-radio-button value="indeterminate">Indeterminate</mat-radio-button>
+        </mat-radio-group>
+        <div matLine *ngIf="progressMode == 'determinate' ">
+            <label>Progress:</label>
+            <mat-slider [(ngModel)]="value"></mat-slider>
+        </div>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-header>
+        <h3 mat-card-title>Result</h3>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-progress-spinner [color]="colorTheme" [value]="value" [mode]="progressMode"></mat-progress-spinner>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<style>
+    .mat-checkbox, .mat-radio-button {
+        margin: 1rem 0.5rem;
+    }
+</style>
