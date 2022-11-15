@@ -26,6 +26,7 @@ import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component
 import { MatDataTableComponent } from './components/mat-data-table/mat-data-table.component';
 import { VirtualScrollingComponent } from './components/virtual-scrolling/virtual-scrolling.component';
 import { MatTableComponent } from './components/mat-table/mat-table.component';
+import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
        { path: 'data-table', component: MatDataTableComponent, title: 'Data Table' },
        { path: 'table', component: MatTableComponent, title: 'Data Table' },
        { path: 'virtual-scrolling', component: VirtualScrollingComponent, title: 'Virtual Scrolling' },
+       { path: 'slider', component: MatSliderComponent, title: 'Slider' },
      ]
   },
 ]

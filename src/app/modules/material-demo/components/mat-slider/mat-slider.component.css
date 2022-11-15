@@ -1,0 +1,17 @@
+.mat-form-field {
+    margin-right: 1rem;
+}
+
+.mat-checkbox {
+    margin: 1rem;
+}
+
+.container {
+    display: block;
+    margin: 3rem auto;
+    width: 75%;
+}
+
+/* .mat-card {
+    margin: 2rem inherit;
+} */

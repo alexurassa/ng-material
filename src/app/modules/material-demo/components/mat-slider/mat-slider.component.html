@@ -1,0 +1,98 @@
+<div class="container">
+    <p class="mat-body-2">A very basic slider</p>
+    <mat-slider [value]="20"></mat-slider>
+
+    <span class="mat-card">
+        <mat-card>
+            <mat-card-header>
+                <h3 mat-card-title>Slider settings</h3>
+            </mat-card-header>
+            <mat-card-content>
+                <div matLine>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Value</mat-label>
+                        <input type="number" matInput [(ngModel)]="value" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Min Value</mat-label>
+                        <input type="number" matInput [(ngModel)]="minValue" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Max Value</mat-label>
+                        <input type="number" matInput [(ngModel)]="maxValue" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Slider Step</mat-label>
+                        <input type="number" matInput [(ngModel)]="sliderStep" />
+                    </mat-form-field>
+                </div>
+
+                <div matLine>
+                    <mat-radio-group [(ngModel)]="color">
+                        <mat-radio-button *ngFor="let color of materialColors" [value]="color">{{ color | uppercase }}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div matLine>
+                    <span matLine>
+                        <mat-checkbox labelPosition="before" [(ngModel)]="showTicks">Show Ticks</mat-checkbox>
+                        <mat-checkbox labelPosition="before" [(ngModel)]="autoTicks" *ngIf="showTicks">Auto Ticks</mat-checkbox>
+                        <div matLine *ngIf="showTicks && !autoTicks">
+                            <mat-form-field apperance="outline">
+                                <mat-label>Tick Interval</mat-label>
+                                <input type="number" matInput [(ngModel)]="tickInterval" />
+                            </mat-form-field>
+                        </div>
+                    </span>
+                    <div matLine>
+                        <h2 class="mat-subheading-2">Orientation</h2>
+                        <mat-checkbox [(ngModel)]="vertical">Vertical</mat-checkbox>
+                        <mat-checkbox [(ngModel)]="inverted">Inverted</mat-checkbox>
+                    </div>
+                    <div matLine>
+                        <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+                    </div>
+                    <mat-checkbox matLine [(ngModel)]="showThumbLabel">Show Thumb label</mat-checkbox>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </span>
+
+
+
+    <span class="mat-card">
+        <mat-card>
+            <mat-card-header>
+                <h3 mat-card-title>Slider settings output</h3>
+            </mat-card-header>
+            <mat-card-content>
+                <div matLine>
+                    <label [matBadge]="value" [matBadgeOverlap]="false" class="mat-body-2">Result {{ value }}</label>
+                </div>
+                <mat-slider
+                    [value]="value"
+                    [min]="minValue"
+                    [max]="maxValue"
+                    [tickInterval]="getSliderTickInterval()"
+                    [vertical]="vertical"
+                    [invert]="inverted"
+                    [step]="sliderStep"
+                    [disabled]="disabled"
+                    [thumbLabel]="showThumbLabel"
+                    [color]="color"
+                ></mat-slider>
+            </mat-card-content>
+        </mat-card>
+    </span>
+
+    <section matLine>
+        <p class="mat-title">A matSlider with a custom display function for thumbLabel</p>
+        <mat-slider
+            [min]="30"
+            [max]="10000"
+            [step]="100"
+            [displayWith]="formatLabel"
+            [thumbLabel]="true"
+        ></mat-slider>
+    </section>
+</div>
