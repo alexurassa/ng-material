@@ -13,24 +13,51 @@ export class MatAutocompleteComponent implements OnInit {
 
   fruits!: Array<string>
   customers!: Array<Customer>
-  filteredCustomers!: Observable<Array<Customer>>
-  customerName: FormControl = new FormControl()
+  filteredCustomers!: Observable<Customer[]>
+  customerFormControl: FormControl = new FormControl()
 
-  public displayFn(customer: any): string {
-    return customer.name || undefined 
+  numberControl: FormControl = new FormControl()
+  options: string[] = ['One', 'Two', 'Three']
+  filteredOptions!: Observable<string[]>
+
+  private filterNumber(value: string): string[] {
+    return this.options.filter((option: string) => option.includes(this.normalizeValue(value)) )
   }
 
-  public initCustomers(): void {
+  public customerDisplayFn(customer: any): string {
+    return customer.customerName || null 
+  }
+
+  private initCustomers(): void {
     this.customers = [
-      { name: 'Omari'}, { name: 'Livingstone'}, { name: 'John'}
+      { customerName: 'Omari'}, { customerName: 'Livingstone'}, { customerName: 'John'}
     ]
   }
 
-  private _filterCustomer(value: string): Customer[] {
-    const filteredValue: string = value.toLowerCase()
-    return this.customers.filter(
-      (customer: Customer) => customer.name.toLowerCase().includes(filteredValue)
+  private updateOptionsObs(): void {
+    this.filteredOptions = this.numberControl.valueChanges.pipe(
+      startWith(''),
+      map((value: string) => this.filterNumber(value || ''))
     )
+  }
+
+  private filterCustomer(value: string): Customer[] {
+    const filteredValue: string = this.normalizeValue(value)
+    return this.customers.filter(
+      (customer: Customer) => customer.customerName.toLowerCase().includes(filteredValue || '')
+    )
+  }
+
+  private updateCustomersObservable(): void {
+    this.filteredCustomers = this.customerFormControl.valueChanges.pipe(
+      startWith(''),
+      map((value: string) => this.filterCustomer(value || ''))
+    )
+  }
+
+
+  private normalizeValue(value: string): string {
+    return value.trim().toLowerCase()
   }
 
   constructor() { }
@@ -38,11 +65,8 @@ export class MatAutocompleteComponent implements OnInit {
   ngOnInit(): void {
     this.fruits = ['Banana', 'Orange', 'Overcado']
     this.initCustomers()
-
-    this.filteredCustomers = this.customerName.valueChanges.pipe(
-      startWith(''),
-      map((value: string) => this._filterCustomer(value))
-    )
+    this.updateOptionsObs()
+    this.updateCustomersObservable()
   }
 
 }
@@ -50,5 +74,5 @@ export class MatAutocompleteComponent implements OnInit {
 
 
 interface Customer {
-  name: string 
+  customerName: string 
 }
