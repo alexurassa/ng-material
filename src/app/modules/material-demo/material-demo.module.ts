@@ -33,6 +33,7 @@ import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
 import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
 import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
+import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
 
 
 
@@ -68,7 +69,8 @@ import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progr
     MatTableComponent,
     MatSliderComponent,
     MatSliderToggleComponent,
-    MatProgressBarComponent
+    MatProgressBarComponent,
+    MatTabsComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [

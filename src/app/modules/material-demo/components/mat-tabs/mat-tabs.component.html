@@ -1,0 +1,55 @@
+<mat-tab-group dynamicHeight>
+    <mat-tab label="First Tab">Content one</mat-tab>
+    <mat-tab label="Second Tab">Content Two</mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>
+                <mat-icon fontIcon="thumb_up" [color]="activeLink == 'home' ? 'accent': ''"></mat-icon>
+                Cool last
+            </span>
+        </ng-template>
+        <p class="mat-body-2">Content Three</p>
+        <p class="mat-body-2">Content Three</p>
+    </mat-tab>
+</mat-tab-group>
+
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+         *ngFor="let link of links"
+         (click)="activeLink = link"
+         [active]="activeLink == link"
+         >{{ link | uppercase }}</a>
+    <a mat-tab-link disabled>Disabled link</a>
+    <mat-tab-nav-panel></mat-tab-nav-panel>
+</nav>
+
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab>
+        <ng-template matTabLabel>
+            <span>
+                home
+                <mat-icon>home</mat-icon>
+            </span>
+        </ng-template>
+        <p class="mat-body-2">Contents for this tab</p>
+    </mat-tab>
+    <mat-tab label="Another Tab">
+        <p>some contents also for this Tab</p>
+    </mat-tab>
+</mat-tab-group>
+
+<p class="mat-title" matLine>Tabs With animation</p>
+<mat-tab-group animationDuration="0ms">
+    <mat-tab *ngFor="let tabLink of links" [label]="tabLink">{{ tabLink }}</mat-tab>
+</mat-tab-group>
+
+<h3 class="mat-headline">Async tabs</h3>
+<mat-tab-group>
+    <mat-tab *ngFor="let tabItem of asyncTabs | async">
+        <ng-template mat-tab-label>
+            {{ tabItem.label }}
+        </ng-template>
+        {{ tabItem.content }}
+    </mat-tab>
+</mat-tab-group>

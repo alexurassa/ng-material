@@ -29,6 +29,7 @@ import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
 import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
 import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
+import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,7 @@ const routes: Routes = [
        { path: 'slider', component: MatSliderComponent, title: 'Slider' },
        { path: 'slide-toggle', component: MatSliderToggleComponent, title: 'Slider' },
        { path: 'progress-bar', component: MatProgressBarComponent, title: 'Progress Bar' },
+       { path: 'tabs', component: MatTabsComponent, title: 'Mat Tabs' },
      ]
   },
 ]

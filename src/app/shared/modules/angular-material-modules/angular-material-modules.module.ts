@@ -30,6 +30,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSliderModule } from '@angular/material/slider'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs'
 
 
 
@@ -64,7 +65,8 @@ const materialModules: Array<any> = [
   MatPaginatorModule,
   MatSliderModule,
   MatSlideToggleModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatTabsModule,
 ]
 
 
