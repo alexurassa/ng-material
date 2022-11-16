@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <h2 mat-card-subtitle>Progress bar configs</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <section class="config-section">
+                <label for="">Color:</label>
+                <mat-radio-group [(ngModel)]="colorTheme">
+                    <mat-radio-button *ngFor="let theme of materialThemes" [value]="theme">{{ theme | lowercase }}</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <section class="config-section">
+                <mat-radio-group [(ngModel)]="progressMode">
+                    <mat-radio-button *ngFor="let mode of progressModes" [value]="mode">{{ mode }}</mat-radio-button>
+                </mat-radio-group>
+            </section>
+
+            <section class="config-section">
+                <div class="mat-block" *ngIf="progressMode === 'determinate' || progressMode === 'buffer'">
+                    <label>progress value:</label>
+                    <mat-slider [value]="progressValue" [(ngModel)]="progressValue" [thumbLabel]="true"></mat-slider>
+                </div>
+                <div class="mat-block" *ngIf="progressMode === 'buffer'">
+                    <label>Buffering:</label>
+                    <mat-slider [value]="bufferValue" [(ngModel)]="bufferValue" [thumbLabel]="true"></mat-slider>
+                </div>
+            </section>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+            <h2 mat-card-subtitle>Result</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-progress-bar
+                [color]="colorTheme"
+                [value]="progressValue"
+                [mode]="progressMode"
+                [bufferValue]="bufferValue"
+            ></mat-progress-bar>
+        </mat-card-content>
+    </mat-card>
+</div>

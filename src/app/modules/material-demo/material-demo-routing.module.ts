@@ -28,6 +28,7 @@ import { VirtualScrollingComponent } from './components/virtual-scrolling/virtua
 import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
 import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
+import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
        { path: 'virtual-scrolling', component: VirtualScrollingComponent, title: 'Virtual Scrolling' },
        { path: 'slider', component: MatSliderComponent, title: 'Slider' },
        { path: 'slide-toggle', component: MatSliderToggleComponent, title: 'Slider' },
+       { path: 'progress-bar', component: MatProgressBarComponent, title: 'Progress Bar' },
      ]
   },
 ]

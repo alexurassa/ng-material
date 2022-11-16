@@ -32,6 +32,7 @@ import { VirtualScrollingComponent } from './components/virtual-scrolling/virtua
 import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
 import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
+import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
 
 
 
@@ -66,7 +67,8 @@ import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-sli
     VirtualScrollingComponent,
     MatTableComponent,
     MatSliderComponent,
-    MatSliderToggleComponent
+    MatSliderToggleComponent,
+    MatProgressBarComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [
