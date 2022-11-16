@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSliderModule } from '@angular/material/slider'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 
 
@@ -61,6 +62,7 @@ const materialModules: Array<any> = [
   MatSortModule,
   MatPaginatorModule,
   MatSliderModule,
+  MatSlideToggleModule
 ]
 
 

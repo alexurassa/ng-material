@@ -27,6 +27,7 @@ import { MatDataTableComponent } from './components/mat-data-table/mat-data-tabl
 import { VirtualScrollingComponent } from './components/virtual-scrolling/virtual-scrolling.component';
 import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
+import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
        { path: 'table', component: MatTableComponent, title: 'Data Table' },
        { path: 'virtual-scrolling', component: VirtualScrollingComponent, title: 'Virtual Scrolling' },
        { path: 'slider', component: MatSliderComponent, title: 'Slider' },
+       { path: 'slide-toggle', component: MatSliderToggleComponent, title: 'Slider' },
      ]
   },
 ]

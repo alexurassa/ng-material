@@ -31,6 +31,7 @@ import { MatDataTableComponent } from './components/mat-data-table/mat-data-tabl
 import { VirtualScrollingComponent } from './components/virtual-scrolling/virtual-scrolling.component';
 import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatSliderComponent } from './components/mat-slider/mat-slider.component';
+import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
 
 
 
@@ -64,7 +65,8 @@ import { MatSliderComponent } from './components/mat-slider/mat-slider.component
     MatDataTableComponent,
     VirtualScrollingComponent,
     MatTableComponent,
-    MatSliderComponent
+    MatSliderComponent,
+    MatSliderToggleComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [

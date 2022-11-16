@@ -1,0 +1,14 @@
+.mat-card, .mat-checkbox {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.container {
+    width: 60%;
+    display: block;
+    margin: 2rem auto;
+}
+
+.mat-radio-button {
+    margin-right: .5rem;
+}
