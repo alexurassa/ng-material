@@ -1,0 +1,10 @@
+.container {
+    width: 80%;
+    display: block;
+    margin: 2rem auto;
+}
+
+
+mat-tab-group, nav {
+    margin: 0rem inherit 3rem inherit;
+}

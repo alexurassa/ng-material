@@ -1,55 +1,127 @@
-<mat-tab-group dynamicHeight>
-    <mat-tab label="First Tab">Content one</mat-tab>
-    <mat-tab label="Second Tab">Content Two</mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label>
-            <span>
-                <mat-icon fontIcon="thumb_up" [color]="activeLink == 'home' ? 'accent': ''"></mat-icon>
-                Cool last
-            </span>
-        </ng-template>
-        <p class="mat-body-2">Content Three</p>
-        <p class="mat-body-2">Content Three</p>
-    </mat-tab>
-</mat-tab-group>
+<div class="container">
+    <h3 class="mat-headline">Tabs alignment</h3>
+    <mat-tab-group mat-align-tabs="start" mat-stretch-tabs="false">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">
+            {{ item.content }}
+        </mat-tab>
+    </mat-tab-group>
+    <mat-tab-group mat-align-tabs="center"  mat-stretch-tabs="false">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">
+            {{ item.content }}
+        </mat-tab>
+    </mat-tab-group>
+    <mat-tab-group mat-align-tabs="end">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">
+            {{ item.content }}
+        </mat-tab>
+    </mat-tab-group>
+
+    <h3>Animations</h3>
+    <h3 class="mat-title">Default animation</h3>
+    <mat-tab-group>
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">{{ item.content }}</mat-tab>
+    </mat-tab-group>
+    <h3 class="mat-title">With animation</h3>
+    <mat-tab-group animationDuration="200ms">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">{{ item.content }}</mat-tab>
+    </mat-tab-group>
+
+    <h4 class="mat-title">No animation all</h4>
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">{{ item.content }}</mat-tab>
+    </mat-tab-group>
+    <h4 class="mat-title">Slow animation</h4>
+    <mat-tab-group animationDuration="2000ms">
+        <mat-tab *ngFor="let item of tabItems" [label]="item.label">{{ item.content }}</mat-tab>
+    </mat-tab-group>
+
+    <h3>Loading data asynchronously and custom labelling</h3>
+
+    <p class="mat-body-strong" *ngIf="(asyncTabs | async) == null">
+        Loading AsyncTabs.....
+    </p>
+
+    <mat-tab-group>
+        <mat-tab *ngFor="let asyncTab of asyncTabs | async">
+            <ng-template matTabLabel>
+                <span>
+                    <mat-icon>description</mat-icon>
+                    {{ asyncTab.label }}
+                </span>
+            </ng-template>
+            {{ asyncTab.content }}
+        </mat-tab>
+    </mat-tab-group>
+    <br><br>
+
+    <mat-card>
+        <mat-card-content>
+            <br><br>
+            <button mat-stroked-button color="primary" (click)="addNewTab(addWithActiveStatus.checked)">Add new tab</button><br><br>
+            
+            <mat-checkbox #addWithActiveStatus labelPosition="after">Make active after add:</mat-checkbox>
+            <br><br>
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Selected Tab</mat-label>
+                <input type="number" matInput [formControl]="activeTabIndex" name="" id="">
+            </mat-form-field>
+
+            <mat-tab-group [selectedIndex]="activeTabIndex.value" (selectedIndexChange)="this.activeTabIndex.setValue($event)">
+                <mat-tab *ngFor="let tab of tabs; let index = index;" [label]="tab">
+                    <div>{{ tab }}</div>
+                    <button mat-stroked-button color="warn" (click)="removeTab(index)">Delete this tab</button>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
 
 
-<nav mat-tab-nav-bar>
-    <a mat-tab-link
-         *ngFor="let link of links"
-         (click)="activeLink = link"
-         [active]="activeLink == link"
-         >{{ link | uppercase }}</a>
-    <a mat-tab-link disabled>Disabled link</a>
-    <mat-tab-nav-panel></mat-tab-nav-panel>
-</nav>
+    <h3 class="mat-headline">Header positioned at the bottom</h3>
+    <mat-tab-group headerPosition="below">
+        <mat-tab *ngFor="let tabItem of tabItems" [label]="tabItem.label">
+            {{ tabItem }}
+        </mat-tab>
+    </mat-tab-group>
 
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab>
-        <ng-template matTabLabel>
-            <span>
-                home
-                <mat-icon>home</mat-icon>
-            </span>
-        </ng-template>
-        <p class="mat-body-2">Contents for this tab</p>
-    </mat-tab>
-    <mat-tab label="Another Tab">
-        <p>some contents also for this Tab</p>
-    </mat-tab>
-</mat-tab-group>
 
-<p class="mat-title" matLine>Tabs With animation</p>
-<mat-tab-group animationDuration="0ms">
-    <mat-tab *ngFor="let tabLink of links" [label]="tabLink">{{ tabLink }}</mat-tab>
-</mat-tab-group>
+    <h3 class="mat-headline">Paginated tabs</h3>
+    <mat-tab-group>
+        <mat-tab *ngFor="let tabItem of lotsOfTabs" [label]="tabItem.label">{{ tabItem.content }}</mat-tab>
+    </mat-tab-group>
+    <br><br>
 
-<h3 class="mat-headline">Async tabs</h3>
-<mat-tab-group>
-    <mat-tab *ngFor="let tabItem of asyncTabs | async">
-        <ng-template mat-tab-label>
-            {{ tabItem.label }}
-        </ng-template>
-        {{ tabItem.content }}
-    </mat-tab>
-</mat-tab-group>
+    <mat-card>
+        <mat-card-header>
+            <h3 mat-card-title>Tabs Color configurations</h3>
+        </mat-card-header>
+        <mat-card-content>
+            <div matLine>
+                <mat-button-toggle-group value="accent" #backgroundColorToggle="matButtonToggleGroup">
+                    <ng-template ngFor let-theme [ngForOf]="materialThemes">
+                        <mat-button-toggle [value]="theme">{{ theme }}</mat-button-toggle>
+                    </ng-template>
+                </mat-button-toggle-group>
+                <span>Background color</span>
+            </div>
+
+            <div matLine>
+                <mat-button-toggle-group value="primary" #colorToggle="matButtonToggleGroup">
+                    <ng-template ngFor let-theme [ngForOf]="materialThemes">
+                        <mat-button-toggle [value]="theme">{{ theme }}</mat-button-toggle>
+                    </ng-template>
+                </mat-button-toggle-group>
+                <span>Color</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <br><br>
+
+    <div class="mat-elevation-z4">
+        <h3 class="mat-title">Config Result</h3>
+        <mat-tab-group fitInkBarToContent [color]="colorToggle.value" [backgroundColor]="backgroundColorToggle.value">
+            <mat-tab *ngFor="let tab of tabItems" [label]="tab.label">{{ tab.content }}</mat-tab>
+        </mat-tab-group>
+    </div>
+    <br><br><br><br>
+</div>
