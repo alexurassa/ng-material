@@ -31,6 +31,7 @@ import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-sli
 import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
 import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
 import { NestedTreeComponent } from './components/nested-tree/nested-tree.component';
+import { MatFlatTreeComponent } from './components/mat-flat-tree/mat-flat-tree.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,7 @@ const routes: Routes = [
        { path: 'progress-bar', component: MatProgressBarComponent, title: 'Progress Bar' },
        { path: 'tabs', component: MatTabsComponent, title: 'Mat Tabs' },
        { path: 'nested-tree', component: NestedTreeComponent, title: 'Nested Tree' },
+       { path: 'flat-tree', component: MatFlatTreeComponent, title: 'Flat Tree' },
      ]
   },
 ]

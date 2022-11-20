@@ -1,0 +1,22 @@
+<div class="container mat-elevation-z5">
+    <h3 class="mat-headline">Ng Material Flat Tree Demo</h3>
+    <mat-tree [treeControl]="flatCourseTreeControl" [dataSource]="flatCourseTreeDataSource">
+
+        <mat-tree-node *matTreeNodeDef="let courseNode" matTreeNodePadding>
+            <!-- leaf node -->
+            <div class="leaf-node"><span class="mat-body">{{ courseNode.courseName }}</span></div>
+        </mat-tree-node>
+
+
+        <mat-tree-node *matTreeNodeDef="let courseNode; when: hasFlatChild" matTreeNodePadding>
+
+            <button mat-icon-button color="primary" matTreeNodeToggle>
+                <mat-icon [fontIcon]="flatCourseTreeControl.isExpanded(courseNode) ? 'keyboard_arrow_down': 'keyboard_arrow_right'"></mat-icon>
+            </button>
+
+            {{ courseNode.courseName }}
+
+        </mat-tree-node>
+
+    </mat-tree>
+</div>
