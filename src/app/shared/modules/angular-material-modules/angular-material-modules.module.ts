@@ -31,6 +31,7 @@ import { MatSliderModule } from '@angular/material/slider'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs'
+import { MatTreeModule } from '@angular/material/tree';
 
 
 
@@ -67,6 +68,7 @@ const materialModules: Array<any> = [
   MatSlideToggleModule,
   MatProgressBarModule,
   MatTabsModule,
+  MatTreeModule
 ]
 
 
