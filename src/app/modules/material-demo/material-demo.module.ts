@@ -34,6 +34,7 @@ import { MatSliderComponent } from './components/mat-slider/mat-slider.component
 import { MatSliderToggleComponent } from './components/mat-slider-toggle/mat-slider-toggle.component';
 import { MatProgressBarComponent } from './components/mat-progress-bar/mat-progress-bar.component';
 import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
+import { NestedTreeComponent } from './components/nested-tree/nested-tree.component';
 
 
 
@@ -70,7 +71,8 @@ import { MatTabsComponent } from './components/mat-tabs/mat-tabs.component';
     MatSliderComponent,
     MatSliderToggleComponent,
     MatProgressBarComponent,
-    MatTabsComponent
+    MatTabsComponent,
+    NestedTreeComponent
   ],
   entryComponents: [CustomSnackBarComponent, MatDialogTemplateComponent],
   imports: [

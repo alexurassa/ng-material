@@ -6,8 +6,8 @@
 }
 
 .mat-nested-tree-node, .nested-node, .mat-tree-node {
-    padding-left: 2rem;
     display: block;
+    padding-left: 1.25rem;
 }
 
 .node-hidden {
