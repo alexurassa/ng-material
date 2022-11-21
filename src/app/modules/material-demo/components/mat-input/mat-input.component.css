@@ -1,0 +1,18 @@
+.container, .section, .mat-form-field {
+    display: block;
+}
+
+.container {
+    margin: 4rem auto;
+    width: 80%
+}
+
+
+.section {
+    display: block;
+    margin: 1.5rem inherit;
+}
+
+.mat-form-field {
+    margin-bottom: 1rem;
+}
