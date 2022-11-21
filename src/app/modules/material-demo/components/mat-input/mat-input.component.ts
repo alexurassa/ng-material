@@ -29,13 +29,16 @@ class CustomErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'app-mat-input',
   templateUrl: './mat-input.component.html',
-  styleUrls: ['./mat-input.component.css']
+  styleUrls: ['./mat-input.component.css'],
 })
 export class MatInputComponent implements OnInit {
+  public customErrorStateMatcher: CustomErrorStateMatcher =
+    new CustomErrorStateMatcher();
 
-  public customErrorStateMatcher: CustomErrorStateMatcher = new CustomErrorStateMatcher();
-
-  emailControl: FormControl<string | null> = new FormControl<string>('', [Validators.required, Validators.email]);
+  emailControl: FormControl<string | null> = new FormControl<string>('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
   constructor() {}
 
