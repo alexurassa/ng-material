@@ -1,11 +1,51 @@
 <div class="container">
-  <button
-    mat-button
-    matTooltip
-    matTooltipPosition="after"
-    [matTooltipHideDelay]="2000"
-    [matTooltipShowDelay]="2000"
-  >
+  <button mat-button matTooltip="Custom tooltip" matTooltipPosition="after" [matTooltipHideDelay]="2000"
+    [matTooltipShowDelay]="2000" [attr.aria-label]="'A tooltip that shows and hides after 2 seconds'">
     Hover to show tooltip
   </button>
+
+  <mat-card>
+    <mat-card-header>
+      <h2 mat-card-title>Tooltip Configs</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Tooltip Position</mat-label>
+        <mat-select [(ngModel)]="tooltipPosition">
+          <mat-option *ngFor="let position of tooltipPositions" [value]="position">{{ position }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Show delay</mat-label>
+        <input type="number" matInput [(ngModel)]="hideDelay" />
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Hide delay</mat-label>
+        <input type="number" matInput [(ngModel)]="showDelay" />
+      </mat-form-field>
+      
+      <mat-card-actions>
+        <button mat-stroked-button color="primary" class="btn" (click)="tooltip.show()">
+          Show
+        </button>
+        <button mat-stroked-button color="primary" class="btn" (click)="tooltip.hide()">
+          Hide
+        </button>
+        <button mat-stroked-button color="primary" class="btn" (click)="tooltip.toggle()">
+          Toggle(hide/show)
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+  <span class="mat-elevation-z4">
+    <h3>Result</h3>
+    <button mat-raised-button #tooltip="matTooltip"
+      matTooltip="A tooltip that can be toggled with a custom hide and show delays from user"
+      [matTooltipPosition]="tooltipPosition" [matTooltipHideDelay]="hideDelay" [matTooltipShowDelay]="showDelay" matTooltipClass="myTooltip">
+      Action
+    </button>
+  </span>
 </div>

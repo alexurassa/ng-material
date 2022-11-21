@@ -1,20 +1,29 @@
 <mat-grid-list [cols]="2" rowHeight="2:1" [gutterSize]="gutterSize">
-  <mat-grid-tile *ngFor="let tileNumber of tiles">
+  <mat-grid-tile class="custom-tile" *ngFor="let tile of tiles">
+    <mat-grid-tile-header>{{ tile.header }}</mat-grid-tile-header>
+    <mat-grid-tile-footer>{{ tile.footer }}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-grid-list [cols]="2" rowHeight="100px">
+  <mat-grid-tile
+    *ngFor="let tile of gridTiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.backgroundColor]="tile.color"
+  >
     <mat-grid-tile-header>
-      <h3 class="mat-title">List Tile Header {{ tileNumber }}</h3>
+      <p class="mat-body-strong">{{ tile.text }}</p>
     </mat-grid-tile-header>
     <mat-grid-tile-footer>
-      <p class="mat-body-1">List Tile Footer {{ tileNumber }}</p>
+      <p class="mat-body-strong">{{ tile.text }}</p>
     </mat-grid-tile-footer>
   </mat-grid-tile>
 </mat-grid-list>
 
 <style>
-  mat-grid-tile {
+  .custom-tile {
     background-color: lightseagreen;
-  }
-
-  mat-grid-list {
-    height: 200px;
   }
 </style>
