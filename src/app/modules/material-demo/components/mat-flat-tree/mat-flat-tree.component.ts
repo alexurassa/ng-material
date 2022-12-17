@@ -44,15 +44,10 @@ export class MatFlatTreeComponent implements OnInit {
     (courseNode: CourseNode) => courseNode.children
   );
 
-  flatCourseTreeDataSource = new MatTreeFlatDataSource<CourseNode, FlatCourseNode, FlatCourseNode>(
-    this.flatCourseTreeControl,
-    this.courseTreeFlattener
-  );
-
+  flatCourseTreeDataSource = new MatTreeFlatDataSource(
+    this.flatCourseTreeControl, this.courseTreeFlattener)
 
   public hasFlatChild = (index: number, flatCourseNode: FlatCourseNode) => flatCourseNode.expandable
-
-  constructor() {}
 
   public ngOnInit(): void {
     this.flatCourseTreeDataSource.data = TREE_DATA;
